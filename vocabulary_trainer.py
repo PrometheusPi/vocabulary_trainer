@@ -73,7 +73,7 @@ if __name__ == "__main__":
     print("let's start the test:")
 
     pairs = get_all_vocab_pairs()
-
+    pairs +=  [(deu, jap) for (jap, deu) in pairs]
 
     for word, translation in random.sample(pairs, 3):
         print()
