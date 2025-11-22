@@ -3,14 +3,14 @@ import random
 
 
 # know globaly
-conn = sqlite3.connect("vocab_jap.db")
-cur = conn.cursor()
+conn_vocab = sqlite3.connect("vocab_jap.db")
+cur_vocab = conn_vocab.cursor()
 
 
-def create_db():
+def create_vocab_db():
 
     # create database if not there
-    cur.execute(
+    cur_vocab.execute(
         """
         CREATE TABLE IF NOT EXISTS Japanisch (
         id INTEGER PRIMARY KEY,
@@ -19,28 +19,28 @@ def create_db():
         )
         """
     )
-    conn.commit()
+    conn_vocab.commit()
 
 
 
 def add_word(word, translation):
     try:
-        cur.execute(
+        cur_vocab.execute(
             """
             INSERT INTO Japanisch
             (word, translation) VALUES (?, ?)
             """,
             (word, translation)
         )
-        conn.commit()
+        conn_vocab.commit()
         print("added word")
     except sqlite3.IntegrityError:
         print("word already in database")
 
 
 def get_all_vocab_pairs():
-    cur.execute("SELECT word, translation FROM Japanisch")
-    rows = cur.fetchall()
+    cur_vocab.execute("SELECT word, translation FROM Japanisch")
+    rows = cur_vocab.fetchall()
 
     return rows
 
@@ -55,7 +55,7 @@ def print_all_vocab():
 
 if __name__ == "__main__":
 
-    create_db()
+    create_vocab_db()
 
     print("Vocabulary Trainer")
 
