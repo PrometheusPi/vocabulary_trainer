@@ -21,7 +21,26 @@ def create_vocab_db():
     )
     conn_vocab.commit()
 
+def create_stats_db():
+    # create user stats database
+    # iterate through all vocab and add it if needed
+    db_path="training_stats.db"
+    conn_stats = sqlite3.connect(db_path)
+    cur_stats = conn_stats.cursor()
 
+    cur_stats.execute(
+        """
+        CREATE TABLE IF NOT EXISTS training_stats (
+            vocab_id INTEGER PRIMARY KEY,
+            last_trained TIMESTAMP,
+            correct INTEGER DEFAULT 0,
+            wrong INTEGER DEFAULT 0
+        )
+        """
+    )
+    conn_stats.commit()
+    conn_stats.close()
+    
 
 def add_word(word, translation):
     try:
@@ -56,7 +75,8 @@ def print_all_vocab():
 if __name__ == "__main__":
 
     create_vocab_db()
-
+    create_stats_db()
+    
     print("Vocabulary Trainer")
 
     # add words to database
@@ -82,3 +102,4 @@ if __name__ == "__main__":
             print("correct")
         else:
             print(f"wrong - the correct answer is {word}")
+
