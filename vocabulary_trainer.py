@@ -38,9 +38,28 @@ def create_stats_db():
         )
         """
     )
+    conn_stats.commit() # TODO: do I need this here?
+
+    # add new vocabulary
+    cur_vocab.execute("SELECT id FROM Japanisch")
+    vocab_ids = {row[0] for row in cur_vocab.fetchall()}
+
+    cur_stats.execute("SELECT vocab_id FROM training_stats")
+    stats_ids = {row[0] for row in cur_stats.fetchall()}
+
+    missing_ids = vocab_ids - stats_ids
+
+    for i in missing_ids:
+        cur_stats.execute(
+            """
+            INSERT INTO training_stats
+            (vocab_id, last_trained, correct, wrong)
+            VALUES (?, NULL, 0, 0)
+            """, (i,))
+
     conn_stats.commit()
     conn_stats.close()
-    
+
 
 def add_word(word, translation):
     try:
@@ -76,7 +95,7 @@ if __name__ == "__main__":
 
     create_vocab_db()
     create_stats_db()
-    
+
     print("Vocabulary Trainer")
 
     # add words to database
@@ -102,4 +121,3 @@ if __name__ == "__main__":
             print("correct")
         else:
             print(f"wrong - the correct answer is {word}")
-
