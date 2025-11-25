@@ -1,5 +1,6 @@
 import sqlite3
 import random
+from datetime import datetime
 
 
 # know globaly
@@ -77,7 +78,7 @@ def add_word(word, translation):
 
 
 def get_all_vocab_pairs():
-    cur_vocab.execute("SELECT word, translation FROM Japanisch")
+    cur_vocab.execute("SELECT word, translation, id FROM Japanisch")
     rows = cur_vocab.fetchall()
 
     return rows
@@ -88,6 +89,43 @@ def print_all_vocab():
     for word, translation in pairs:
         print(f"{word} \t  -> \t {translation}")
 
+
+def update_stats(vocab_id, correct):
+    db_path="training_stats.db"
+    conn_stats = sqlite3.connect(db_path)
+    cur_stats = conn_stats.cursor()
+
+    now = datetime.now().isoformat(timespec='seconds')
+    print(now)
+
+    if correct:
+        set_string = "correct = correct + 1"
+    else:
+        set_string = "wrong = wrong + 1"
+
+    sql_string = """
+    UPDATE training_stats
+    SET last_trained = ?,
+      {}
+    WHERE vocab_id = ?;
+    """.format(set_string)
+
+    cur_stats.execute(sql_string, (now, vocab_id))
+
+    conn_stats.commit()
+    conn_stats.close()
+
+
+def print_dbs():
+    # for debug purposes
+    db_path="training_stats.db"
+    conn_stats = sqlite3.connect(db_path)
+    cur_stats = conn_stats.cursor()
+    cur_stats.execute("SELECT * FROM training_stats")
+    rows = cur_stats.fetchall()
+    print("Stats:")
+    for row in rows:
+        print(row)
 
 
 
@@ -112,12 +150,14 @@ if __name__ == "__main__":
     print("let's start the test:")
 
     pairs = get_all_vocab_pairs()
-    pairs +=  [(deu, jap) for (jap, deu) in pairs]
+    pairs +=  [(deu, jap, vocab_id) for (jap, deu, vocab_id) in pairs]
 
-    for word, translation in random.sample(pairs, 3):
+    for word, translation, vocab_id in random.sample(pairs, 3):
         print()
         answer = input(f"{translation} :\n")
         if answer == word:
             print("correct")
+            update_stats(vocab_id, True)
         else:
             print(f"wrong - the correct answer is {word}")
+            update_stats(vocab_id, False)
