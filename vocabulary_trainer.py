@@ -155,7 +155,7 @@ if __name__ == "__main__":
     for word, translation, vocab_id in random.sample(pairs, 3):
         print()
         answer = input(f"{translation} :\n")
-        if answer == word:
+        if answer in word.split("/"):
             print("correct")
             update_stats(vocab_id, True)
         else:
