@@ -96,7 +96,6 @@ def update_stats(vocab_id, correct):
     cur_stats = conn_stats.cursor()
 
     now = datetime.now().isoformat(timespec='seconds')
-    print(now)
 
     if correct:
         set_string = "correct = correct + 1"
@@ -115,6 +114,33 @@ def update_stats(vocab_id, correct):
     conn_stats.commit()
     conn_stats.close()
 
+
+def get_last_learned(vocab_id):
+    # return when a word was last reviewed
+    db_path="training_stats.db"
+    conn_stats = sqlite3.connect(db_path)
+    cur_stats = conn_stats.cursor()
+
+    now = datetime.now().isoformat(timespec='seconds')
+
+    sql_string = """
+    SELECT last_trained
+    FROM training_stats
+    WHERE vocab_id = ?;
+    """
+
+    cur_stats.execute(sql_string, (vocab_id,))
+    rows = cur_vocab.fetchall()
+    # this is inefficent as this gets the last access time for each word individually
+
+    conn_stats.commit()
+    conn_stats.close()
+
+    if len(rows) == 0:
+        return 365 * 24 * 60 * 60 # defualt one year - a bit arbitrary
+
+    return (datetime.fromisoformat(now) -
+            datetime.fromisoformat(rows[0])).total_seconds()
 
 def print_dbs():
     # for debug purposes
@@ -150,9 +176,15 @@ if __name__ == "__main__":
     print("let's start the test:")
 
     pairs = get_all_vocab_pairs()
-    pairs +=  [(deu, jap, vocab_id) for (jap, deu, vocab_id) in pairs]
 
-    for word, translation, vocab_id in random.sample(pairs, 3):
+    new_pairs = []
+    for deu, jap, vocab_id in pairs:
+        last = get_last_learned(vocab_id)
+        new_pairs.append((deu, jap, vocab_id, last,))
+
+    new_pairs +=  [(deu, jap, vocab_id, last) for (jap, deu, vocab_id, last) in new_pairs]
+
+    for word, translation, vocab_id, _ in random.sample(new_pairs, 3):
         print()
         answer = input(f"{translation} :\n")
         if answer in word.split("/"):
