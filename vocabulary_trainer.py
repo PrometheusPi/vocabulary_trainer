@@ -197,7 +197,7 @@ if __name__ == "__main__":
 
     probabilty = convert_score_to_probability(score_list)
 
-    for word, translation, vocab_id, _ in random.sample(new_pairs, 3):
+    for word, translation, vocab_id, _ in random.choices(new_pairs, probabilty, k=3):
         print()
         answer = input(f"{translation} :\n")
         if answer in word.split("/"):
