@@ -1,6 +1,7 @@
 import sqlite3
 import random
 from datetime import datetime
+import math
 
 
 # know globaly
@@ -142,6 +143,14 @@ def get_last_learned(vocab_id):
     return (datetime.fromisoformat(now) -
             datetime.fromisoformat(res)).total_seconds()
 
+
+def convert_score_to_probability(score_list):
+    # using a softmax approch
+    weight = 1.0 / 60. / 60. / 24. / 7.
+    exp_score = [math.exp(weight * s) for s in score_list]
+    norm = sum(exp_score)
+    return [es / norm for es in exp_score]
+
 def print_dbs():
     # for debug purposes
     db_path="training_stats.db"
@@ -183,6 +192,10 @@ if __name__ == "__main__":
         new_pairs.append((deu, jap, vocab_id, last,))
 
     new_pairs +=  [(deu, jap, vocab_id, last) for (jap, deu, vocab_id, last) in new_pairs]
+
+    score_list = [s for _, _, _, s in new_pairs]
+
+    probabilty = convert_score_to_probability(score_list)
 
     for word, translation, vocab_id, _ in random.sample(new_pairs, 3):
         print()
