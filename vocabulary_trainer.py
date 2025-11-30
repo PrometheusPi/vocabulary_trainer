@@ -130,17 +130,17 @@ def get_last_learned(vocab_id):
     """
 
     cur_stats.execute(sql_string, (vocab_id,))
-    rows = cur_vocab.fetchall()
+    res = cur_stats.fetchall()[0][0]
     # this is inefficent as this gets the last access time for each word individually
 
     conn_stats.commit()
     conn_stats.close()
 
-    if len(rows) == 0:
+    if res == None:
         return 365 * 24 * 60 * 60 # defualt one year - a bit arbitrary
 
     return (datetime.fromisoformat(now) -
-            datetime.fromisoformat(rows[0])).total_seconds()
+            datetime.fromisoformat(res)).total_seconds()
 
 def print_dbs():
     # for debug purposes
