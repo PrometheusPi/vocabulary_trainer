@@ -79,6 +79,7 @@ class vocab_trainer:
             )
             self.conn_vocab.commit()
             print("added word")
+            self.create_stats_db()
         except sqlite3.IntegrityError:
             print("word already in database")
 
