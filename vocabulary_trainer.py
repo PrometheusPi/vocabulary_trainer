@@ -156,6 +156,25 @@ class vocab_trainer:
             print(row)
 
 
+    def get_vocab_pairs(self, n):
+        """
+        n ... int: number of vocab pairs
+        """
+        pairs = self.get_all_vocab_pairs()
+
+        new_pairs = []
+        for deu, jap, vocab_id in pairs:
+            last = my_vocab_trainer.get_last_learned(vocab_id)
+            new_pairs.append((deu, jap, vocab_id, last,))
+
+        new_pairs +=  [(deu, jap, vocab_id, last) for (jap, deu, vocab_id, last) in new_pairs]
+
+        score_list = [s for _, _, _, s in new_pairs]
+
+        probabilty = self.convert_score_to_probability(score_list)
+
+        return random.choices(new_pairs, probabilty, k=n)
+
 
 if __name__ == "__main__":
 
@@ -175,20 +194,7 @@ if __name__ == "__main__":
     # test start
     print("let's start the test:")
 
-    pairs = my_vocab_trainer.get_all_vocab_pairs()
-
-    new_pairs = []
-    for deu, jap, vocab_id in pairs:
-        last = my_vocab_trainer.get_last_learned(vocab_id)
-        new_pairs.append((deu, jap, vocab_id, last,))
-
-    new_pairs +=  [(deu, jap, vocab_id, last) for (jap, deu, vocab_id, last) in new_pairs]
-
-    score_list = [s for _, _, _, s in new_pairs]
-
-    probabilty = my_vocab_trainer.convert_score_to_probability(score_list)
-
-    for word, translation, vocab_id, _ in random.choices(new_pairs, probabilty, k=3):
+    for word, translation, vocab_id, _ in my_vocab_trainer.get_vocab_pairs(3):
         print()
         answer = input(f"{translation} :\n")
         if answer in word.split("/"):
