@@ -4,7 +4,7 @@ from datetime import datetime
 import math
 
 
-class vocab_trainer:
+class VocabTrainer:
     def __init__(self, vocab_db_path = "vocab_jap.db", stats_db_path="training_stats.db"):
         self.conn_vocab = sqlite3.connect(vocab_db_path)
         self.cur_vocab = self.conn_vocab.cursor()

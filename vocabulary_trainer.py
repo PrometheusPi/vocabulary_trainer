@@ -1,8 +1,8 @@
-from lib.vocabTrainer import vocab_trainer
+from lib import VocabTrainer
 
 if __name__ == "__main__":
 
-    my_vocab_trainer = vocab_trainer()
+    my_vocab_trainer = VocabTrainer()
 
     print("Vocabulary Trainer")
 
