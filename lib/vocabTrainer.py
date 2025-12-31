@@ -118,32 +118,38 @@ class VocabTrainer:
 
 
 
-    def get_last_learned(self, vocab_id):
+    def get_learning_info(self, vocab_id):
         # return when a word was last reviewed
         now = datetime.now().isoformat(timespec='seconds')
 
         sql_string = """
-        SELECT last_trained
+        SELECT last_trained, correct, wrong
         FROM training_stats
         WHERE vocab_id = ?;
         """
 
         self.cur_stats.execute(sql_string, (vocab_id,))
-        res = self.cur_stats.fetchall()[0][0]
+        last_learned, correct, wrong= self.cur_stats.fetchall()[0]
         # this is inefficent as this gets the last access time for each word individually
 
+        if last_learned == None:
+            delta_time = 365 * 24 * 60 * 60 # default one year - a bit arbitrary
+        else:
+            delta_time = (datetime.fromisoformat(now) -
+                          datetime.fromisoformat(last_learned)).total_seconds()
 
-        if res == None:
-            return 365 * 24 * 60 * 60 # defualt one year - a bit arbitrary
+        if correct + wrong == 0:
+            wrong_ratio = 1.0
+        else:
+            wrong_ratio = wrong / (correct + wrong)
 
-        return (datetime.fromisoformat(now) -
-                datetime.fromisoformat(res)).total_seconds()
+        return (delta_time, wrong_ratio,)
 
 
     def convert_score_to_probability(self, score_list):
         # using a softmax approch
         weight = 1.0 / 60. / 60. / 24. / 7.
-        exp_score = [math.exp(weight * s) for s in score_list]
+        exp_score = [math.exp((weight * s)**(r+0.05)) for s, r in score_list]
         norm = sum(exp_score)
         return [es / norm for es in exp_score]
 
@@ -164,12 +170,12 @@ class VocabTrainer:
 
         new_pairs = []
         for deu, jap, vocab_id in pairs:
-            last = self.get_last_learned(vocab_id)
-            new_pairs.append((deu, jap, vocab_id, last,))
+            last, wrong_ratio = self.get_learning_info(vocab_id)
+            new_pairs.append((deu, jap, vocab_id, last, wrong_ratio, ))
 
-        new_pairs +=  [(deu, jap, vocab_id, last) for (jap, deu, vocab_id, last) in new_pairs]
+        new_pairs +=  [(deu, jap, vocab_id, last, wrong_ratio) for (jap, deu, vocab_id, last, wrong_ratio) in new_pairs]
 
-        score_list = [s for _, _, _, s in new_pairs]
+        score_list = [(d, r) for _, _, _, d, r in new_pairs]
 
         probabilty = self.convert_score_to_probability(score_list)
 
