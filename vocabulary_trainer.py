@@ -60,10 +60,10 @@ class VocabularyTrainer(App):
         vocab_id = get_one[0][2]
         direction = get_one[0][5]
         if answer in translation.split("/"):
-            self.query_one("#result", Static).update(f"Correct! {word} is {translation} ({direction}, {vocab_id})")
+            self.query_one("#result", Static).update(f"Correct! {word} is {translation}")
             self.vocab_trainer.update_stats(vocab_id, direction, True)
         else:
-            self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation} ({direction}, {vocab_id})")
+            self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation}")
             self.vocab_trainer.update_stats(vocab_id, direction, False)
 
 
