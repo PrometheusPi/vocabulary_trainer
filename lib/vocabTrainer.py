@@ -39,10 +39,12 @@ class VocabTrainer:
         self.cur_stats.execute(
             """
             CREATE TABLE IF NOT EXISTS training_stats (
-            vocab_id INTEGER PRIMARY KEY,
+            vocab_id INTEGER,
             last_trained TIMESTAMP,
             correct INTEGER DEFAULT 0,
-            wrong INTEGER DEFAULT 0
+            wrong INTEGER DEFAULT 0,
+            direction BOOL,
+            PRIMARY KEY (vocab_id, direction)
             )
             """
         )
@@ -61,9 +63,10 @@ class VocabTrainer:
             self.cur_stats.execute(
                 """
                 INSERT INTO training_stats
-                (vocab_id, last_trained, correct, wrong)
-                VALUES (?, NULL, 0, 0)
-                """, (i,))
+                (vocab_id, last_trained, correct, wrong, direction)
+                VALUES (?, NULL, 0, 0, TRUE),
+                       (?, NULL, 0, 0, FALSE)
+                """, (i,i,))
 
             self.conn_stats.commit()
 
@@ -97,7 +100,7 @@ class VocabTrainer:
             print(f"{word} \t  -> \t {translation}")
 
 
-    def update_stats(self, vocab_id, correct):
+    def update_stats(self, vocab_id, direction, correct):
         now = datetime.now().isoformat(timespec='seconds')
 
         if correct:
@@ -109,26 +112,26 @@ class VocabTrainer:
         UPDATE training_stats
         SET last_trained = ?,
         {}
-        WHERE vocab_id = ?;
+        WHERE vocab_id = ? AND direction = ?;
         """.format(set_string)
 
-        self.cur_stats.execute(sql_string, (now, vocab_id))
+        self.cur_stats.execute(sql_string, (now, vocab_id, direction))
 
         self.conn_stats.commit()
 
 
 
-    def get_learning_info(self, vocab_id):
+    def get_learning_info(self, vocab_id, direction):
         # return when a word was last reviewed
         now = datetime.now().isoformat(timespec='seconds')
 
         sql_string = """
         SELECT last_trained, correct, wrong
         FROM training_stats
-        WHERE vocab_id = ?;
+        WHERE vocab_id = ? AND direction = ?;
         """
 
-        self.cur_stats.execute(sql_string, (vocab_id,))
+        self.cur_stats.execute(sql_string, (vocab_id, direction, ))
         last_learned, correct, wrong= self.cur_stats.fetchall()[0]
         # this is inefficent as this gets the last access time for each word individually
 
@@ -149,7 +152,7 @@ class VocabTrainer:
     def convert_score_to_probability(self, score_list):
         # using a softmax approch
         weight = 1.0 / 60. / 60. / 24. / 7.
-        exp_score = [math.exp((weight * s)**(r+0.05)) for s, r, _ in score_list]
+        exp_score = [math.exp((weight * s)**(r+0.05)) for s, r in score_list]
         norm = sum(exp_score)
         return [es / norm for es in exp_score]
 
@@ -170,12 +173,14 @@ class VocabTrainer:
 
         new_pairs = []
         for jap, deu, vocab_id in pairs:
-            last, wrong_ratio = self.get_learning_info(vocab_id)
+            # jap -> deu
+            last, wrong_ratio = self.get_learning_info(vocab_id, True)
             new_pairs.append((jap, deu, vocab_id, last, wrong_ratio, True))
+            # deu -> jap
+            last, wrong_ratio = self.get_learning_info(vocab_id, False)
+            new_pairs.append((deu, jap, vocab_id, last, wrong_ratio, False))
 
-        new_pairs +=  [(deu, jap, vocab_id, last, wrong_ratio, False) for (jap, deu, vocab_id, last, wrong_ratio, _) in new_pairs]
-
-        score_list = [(d, r, forward_or_backward) for _, _, _, d, r, forward_or_backward in new_pairs]
+        score_list = [(d, r) for _, _, _, d, r, _ in new_pairs]
 
         probabilty = self.convert_score_to_probability(score_list)
 

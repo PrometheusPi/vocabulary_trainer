@@ -8,10 +8,10 @@ class TestVocabScreen(ModalScreen):
     def __init__(self, get_one):
         super().__init__()
         self.get_one = get_one
-        self.translation = self.get_one[0][1]
-        
+        self.word = self.get_one[0][0]
+
     def compose(self) -> ComposeResult:
-        yield Label(f"What is the translation of '{self.translation}'?", id="question")
+        yield Label(f"What is the translation of '{self.word}'?", id="question")
         yield Input(placeholder="Your answer", id="answer-input")
         yield Button("Check", id="check-button")
 
@@ -20,7 +20,7 @@ class TestVocabScreen(ModalScreen):
             answer = self.query_one("#answer-input", Input).value
             self.dismiss((answer, self.get_one))
 
-            
+
 class AddWordScreen(ModalScreen):
     def compose(self) -> ComposeResult:
         yield Label("Add New Word Pair", id="title")
@@ -42,7 +42,7 @@ class VocabularyTrainer(App):
 
     def compose(self) -> ComposeResult:
         yield Static("Vocabulary Trainer\nPress ctrl+q to exit\n\n", id="title")
-        yield Button("Test Vocabulary", id="test_vocab")        
+        yield Button("Test Vocabulary", id="test_vocab")
         yield Button("Add Word", id="add_word")
         yield Static("", id="result")
 
@@ -52,24 +52,26 @@ class VocabularyTrainer(App):
             self.push_screen(TestVocabScreen(get_one), self.on_test)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
-            
+
     def on_test(self, result):
         answer, get_one = result
         word = get_one[0][0]
+        translation = get_one[0][1]
         vocab_id = get_one[0][2]
-        if answer in word.split("/"):
-            self.query_one("#result", Static).update("Correct!")
-            self.vocab_trainer.update_stats(vocab_id, True)
+        direction = get_one[0][5]
+        if answer in translation.split("/"):
+            self.query_one("#result", Static).update(f"Correct! {word} is {translation} ({direction}, {vocab_id})")
+            self.vocab_trainer.update_stats(vocab_id, direction, True)
         else:
-            self.query_one("#result", Static).update(f"wrong - the correct answer is {word}")
-            self.vocab_trainer.update_stats(vocab_id, False)
-        
-        
+            self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation} ({direction}, {vocab_id})")
+            self.vocab_trainer.update_stats(vocab_id, direction, False)
+
+
 
     def on_add_word(self, word_pair: tuple):
-        word, translation = word_pair        
+        word, translation = word_pair
         self.vocab_trainer.add_word(word, translation)
-    
+
 if __name__ == "__main__":
     vocab_trainer = VocabTrainer()
     app = VocabularyTrainer(vocab_trainer)
