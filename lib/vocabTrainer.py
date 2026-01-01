@@ -149,7 +149,7 @@ class VocabTrainer:
     def convert_score_to_probability(self, score_list):
         # using a softmax approch
         weight = 1.0 / 60. / 60. / 24. / 7.
-        exp_score = [math.exp((weight * s)**(r+0.05)) for s, r in score_list]
+        exp_score = [math.exp((weight * s)**(r+0.05)) for s, r, _ in score_list]
         norm = sum(exp_score)
         return [es / norm for es in exp_score]
 
@@ -169,13 +169,13 @@ class VocabTrainer:
         pairs = self.get_all_vocab_pairs()
 
         new_pairs = []
-        for deu, jap, vocab_id in pairs:
+        for jap, deu, vocab_id in pairs:
             last, wrong_ratio = self.get_learning_info(vocab_id)
-            new_pairs.append((deu, jap, vocab_id, last, wrong_ratio, ))
+            new_pairs.append((jap, deu, vocab_id, last, wrong_ratio, True))
 
-        new_pairs +=  [(deu, jap, vocab_id, last, wrong_ratio) for (jap, deu, vocab_id, last, wrong_ratio) in new_pairs]
+        new_pairs +=  [(deu, jap, vocab_id, last, wrong_ratio, False) for (jap, deu, vocab_id, last, wrong_ratio, _) in new_pairs]
 
-        score_list = [(d, r) for _, _, _, d, r in new_pairs]
+        score_list = [(d, r, forward_or_backward) for _, _, _, d, r, forward_or_backward in new_pairs]
 
         probabilty = self.convert_score_to_probability(score_list)
 
