@@ -36,6 +36,10 @@ class AddWordScreen(ModalScreen):
 
 
 class ListScreen(ModalScreen):
+    def __init__(self, vocab_pairs):
+        super().__init__()
+        self.vocab_pairs = vocab_pairs
+
     def compose(self) -> ComposeResult:
         yield Label("list of all vocabulary", id="title")
         yield DataTable()
@@ -45,7 +49,13 @@ class ListScreen(ModalScreen):
         self.dismiss()
 
     def on_mount(self) -> None:
-        pass
+        table = self.query_one(DataTable)
+        table.add_column("Japanisch")
+        table.add_column("Deutsch")
+
+        for pair in self.vocab_pairs:
+            table.add_row(pair[0], pair[1])
+
 
 class VocabularyTrainer(App):
     def __init__(self, vocab_trainer):
@@ -55,7 +65,7 @@ class VocabularyTrainer(App):
     def compose(self) -> ComposeResult:
         yield Static("Vocabulary Trainer\nPress ctrl+q to exit\n\n", id="title")
         yield Button("Test Vocabulary", id="test_vocab")
-        yield Button("Show vocabulary and stats", id="list")
+        yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
         yield Static("", id="result")
 
@@ -64,7 +74,8 @@ class VocabularyTrainer(App):
             get_one = self.vocab_trainer.get_vocab_pairs(1)
             self.push_screen(TestVocabScreen(get_one), self.on_test)
         elif event.button.id == "list":
-            self.push_screen(ListScreen(), self.on_list)
+            vocab_pairs = self.vocab_trainer.get_all_vocab_pairs()
+            self.push_screen(ListScreen(vocab_pairs), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
 
