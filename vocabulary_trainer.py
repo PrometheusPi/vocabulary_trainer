@@ -1,5 +1,5 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Button, Static, Label, Input
+from textual.widgets import Button, Static, Label, Input, DataTable
 from textual.screen import ModalScreen
 
 from lib import VocabTrainer
@@ -35,6 +35,18 @@ class AddWordScreen(ModalScreen):
             self.dismiss((word, translation))
 
 
+class ListScreen(ModalScreen):
+    def compose(self) -> ComposeResult:
+        yield Label("list of all vocabulary", id="title")
+        yield DataTable()
+        yield Button("Exit", id="exit")
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.dismiss()
+
+    def on_mount(self) -> None:
+        pass
+
 class VocabularyTrainer(App):
     def __init__(self, vocab_trainer):
         super().__init__()
@@ -43,6 +55,7 @@ class VocabularyTrainer(App):
     def compose(self) -> ComposeResult:
         yield Static("Vocabulary Trainer\nPress ctrl+q to exit\n\n", id="title")
         yield Button("Test Vocabulary", id="test_vocab")
+        yield Button("Show vocabulary and stats", id="list")
         yield Button("Add Word", id="add_word")
         yield Static("", id="result")
 
@@ -50,6 +63,8 @@ class VocabularyTrainer(App):
         if event.button.id == "test_vocab":
             get_one = self.vocab_trainer.get_vocab_pairs(1)
             self.push_screen(TestVocabScreen(get_one), self.on_test)
+        elif event.button.id == "list":
+            self.push_screen(ListScreen(), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
 
@@ -66,6 +81,9 @@ class VocabularyTrainer(App):
             self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation}")
             self.vocab_trainer.update_stats(vocab_id, direction, False)
 
+
+    def on_list(self):
+        pass
 
 
     def on_add_word(self, word_pair: tuple):
