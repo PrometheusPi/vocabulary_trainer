@@ -94,7 +94,7 @@ class VocabularyTrainer(App):
             self.vocab_trainer.update_stats(vocab_id, direction, False)
 
 
-    def on_list(self):
+    def on_list(self, result):
         pass
 
 
