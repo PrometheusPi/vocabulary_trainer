@@ -90,7 +90,7 @@ class VocabularyTrainer(App):
             self.query_one("#result", Static).update(f"Correct! {word} is {translation}")
             self.vocab_trainer.update_stats(vocab_id, direction, True)
         else:
-            self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation}")
+            self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation} (you wrote: {answer})")
             self.vocab_trainer.update_stats(vocab_id, direction, False)
 
 
