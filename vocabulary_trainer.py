@@ -68,6 +68,7 @@ class VocabularyTrainer(App):
         yield Button("Test Vocabulary", id="test_vocab")
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
+        yield Button("Close App", id="exit")        
         yield Static("", id="result")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
@@ -79,6 +80,8 @@ class VocabularyTrainer(App):
             self.push_screen(ListScreen(vocab_pairs), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
+        elif event.button.id == "exit":
+            self.exit()
 
     def on_test(self, result):
         answer, get_one = result
