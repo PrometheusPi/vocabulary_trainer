@@ -6,20 +6,36 @@ import random
 from lib import VocabTrainer
 
 class TestVocabScreen(ModalScreen):
-    def __init__(self, get_one):
+    def __init__(self, get_one, vocab_trainer):
         super().__init__()
         self.get_one = get_one
         self.word = self.get_one[0][0]
+        self.vocab_trainer = vocab_trainer
 
     def compose(self) -> ComposeResult:
         yield Label(f"What is the translation of '{random.choice(self.word.split('/'))}'?", id="question")
         yield Input(placeholder="Your answer", id="answer-input")
-        yield Button("Check", id="check-button")
+        yield Button("Check", id="action-button")
+        yield Static("", id="result")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
-        if event.button.id == "check-button":
+        if event.button.id == "action-button" and event.button.label == "Check":
             answer = self.query_one("#answer-input", Input).value
-            self.dismiss((answer, self.get_one))
+
+            word = self.get_one[0][0]
+            translation = self.get_one[0][1]
+            vocab_id = self.get_one[0][2]
+            direction = self.get_one[0][5]
+            if answer.strip() in [trans.strip() for trans in translation.split("/")]:
+                self.query_one("#result", Static).update(f"Correct! {word} is {translation}")
+                self.vocab_trainer.update_stats(vocab_id, direction, True)
+            else:
+                self.query_one("#result",
+                               Static).update(f"wrong - the correct answer for {word} is {translation} (you wrote: {answer})")
+                self.vocab_trainer.update_stats(vocab_id, direction, False)
+            event.button.label = "Next"
+        elif event.button.id == "action-button" and event.button.label == "Next":
+            self.dismiss()
 
 
 class AddWordScreen(ModalScreen):
@@ -68,13 +84,12 @@ class VocabularyTrainer(App):
         yield Button("Test Vocabulary", id="test_vocab")
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
-        yield Button("Close App", id="exit")        
-        yield Static("", id="result")
+        yield Button("Close App", id="exit")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "test_vocab":
             get_one = self.vocab_trainer.get_vocab_pairs(1)
-            self.push_screen(TestVocabScreen(get_one), self.on_test)
+            self.push_screen(TestVocabScreen(get_one, self.vocab_trainer), self.on_test)
         elif event.button.id == "list":
             vocab_pairs = self.vocab_trainer.get_all_vocab_pairs()
             self.push_screen(ListScreen(vocab_pairs), self.on_list)
@@ -84,18 +99,7 @@ class VocabularyTrainer(App):
             self.exit()
 
     def on_test(self, result):
-        answer, get_one = result
-        word = get_one[0][0]
-        translation = get_one[0][1]
-        vocab_id = get_one[0][2]
-        direction = get_one[0][5]
-        if answer.strip() in [trans.strip() for trans in translation.split("/")]:
-            self.query_one("#result", Static).update(f"Correct! {word} is {translation}")
-            self.vocab_trainer.update_stats(vocab_id, direction, True)
-        else:
-            self.query_one("#result", Static).update(f"wrong - the correct answer for {word} is {translation} (you wrote: {answer})")
-            self.vocab_trainer.update_stats(vocab_id, direction, False)
-
+        pass
 
     def on_list(self, result):
         pass
