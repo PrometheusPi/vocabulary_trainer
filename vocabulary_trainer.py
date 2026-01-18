@@ -6,12 +6,12 @@ import random
 from lib import VocabTrainer
 
 class TestVocabScreen(ModalScreen):
-    def __init__(self, get_one, vocab_trainer):
+    def __init__(self, vocab_trainer):
         super().__init__()
-        self.get_one = get_one
-        self.word = self.get_one[0][0]
         self.vocab_trainer = vocab_trainer
-
+        self.get_one = get_one = self.vocab_trainer.get_vocab_pairs(1)
+        self.word = self.get_one[0][0]
+        
     def compose(self) -> ComposeResult:
         yield Label(f"What is the translation of '{random.choice(self.word.split('/'))}'?", id="question")
         yield Input(placeholder="Your answer", id="answer-input")
@@ -88,8 +88,7 @@ class VocabularyTrainer(App):
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "test_vocab":
-            get_one = self.vocab_trainer.get_vocab_pairs(1)
-            self.push_screen(TestVocabScreen(get_one, self.vocab_trainer), self.on_test)
+            self.push_screen(TestVocabScreen(self.vocab_trainer), self.on_test)
         elif event.button.id == "list":
             vocab_pairs = self.vocab_trainer.get_all_vocab_pairs()
             self.push_screen(ListScreen(vocab_pairs), self.on_list)
