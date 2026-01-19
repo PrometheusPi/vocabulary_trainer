@@ -11,11 +11,12 @@ class TestVocabScreen(ModalScreen):
         self.vocab_trainer = vocab_trainer
         self.get_one = get_one = self.vocab_trainer.get_vocab_pairs(1)
         self.word = self.get_one[0][0]
-        
+
     def compose(self) -> ComposeResult:
         yield Label(f"What is the translation of '{random.choice(self.word.split('/'))}'?", id="question")
         yield Input(placeholder="Your answer", id="answer-input")
         yield Button("Check", id="action-button")
+        yield Button("Exit", id="exit-button")
         yield Static("", id="result")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
@@ -36,6 +37,9 @@ class TestVocabScreen(ModalScreen):
             event.button.label = "Next"
         elif event.button.id == "action-button" and event.button.label == "Next":
             self.dismiss()
+        elif event.button.id == "exit-button":
+            self.dismiss()
+
 
 
 class AddWordScreen(ModalScreen):
