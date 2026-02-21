@@ -82,6 +82,9 @@ class VocabularyTrainer(App):
     def __init__(self, vocab_trainer):
         super().__init__()
         self.vocab_trainer = vocab_trainer
+        self.daily_streak = 0
+        #self.query_one("#streak", Static).update(f"Streak of 0 days")
+        
 
     def compose(self) -> ComposeResult:
         yield Static("Vocabulary Trainer\nPress ctrl+q to exit\n\n", id="title")
@@ -89,10 +92,14 @@ class VocabularyTrainer(App):
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
         yield Button("Close App", id="quit")
+        yield Static("", id="daily")
+        
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "test_vocab":
             self.push_screen(TestVocabScreen(self.vocab_trainer), self.on_test)
+            self.daily_streak += 1
+            self.query_one("#daily", Static).update(f"Trained {self.daily_streak} vocabs today.")
         elif event.button.id == "list":
             vocab_pairs = self.vocab_trainer.get_all_vocab_pairs()
             self.push_screen(ListScreen(vocab_pairs), self.on_list)
