@@ -96,7 +96,7 @@ class VocabTrainer:
     def print_all_vocab(self):
         pairs = self.get_all_vocab_pairs()
         # print vocab database
-        for word, translation in pairs:
+        for word, translation, _ in pairs:
             print(f"{word} \t  -> \t {translation}")
 
 
