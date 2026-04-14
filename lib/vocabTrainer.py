@@ -19,11 +19,11 @@ class VocabTrainer:
         self.conn_vocab.close()
         self.conn_stats.close()
 
-    def create_vocab_db(self):
+    def create_vocab_db(self, language="Japanisch"):
         # create database if not there
         self.cur_vocab.execute(
-            """
-            CREATE TABLE IF NOT EXISTS Japanisch (
+            f"""
+            CREATE TABLE IF NOT EXISTS {language} (
             id INTEGER PRIMARY KEY,
             word TEXT UNIQUE NOT NULL,
             translation TEXT NOT NULL
@@ -33,7 +33,7 @@ class VocabTrainer:
         self.conn_vocab.commit() # TODO: do I need this here?
 
 
-    def create_stats_db(self):
+    def create_stats_db(self, language="Japanisch"):
         # create user stats database
         # iterate through all vocab and add it if needed
         self.cur_stats.execute(
@@ -51,7 +51,7 @@ class VocabTrainer:
         self.conn_stats.commit() # TODO: do I need this here?
 
         # add new vocabulary
-        self.cur_vocab.execute("SELECT id FROM Japanisch")
+        self.cur_vocab.execute(f"SELECT id FROM {language}")
         vocab_ids = {row[0] for row in self.cur_vocab.fetchall()}
 
         self.cur_stats.execute("SELECT vocab_id FROM training_stats")
@@ -71,11 +71,11 @@ class VocabTrainer:
             self.conn_stats.commit()
 
 
-    def add_word(self, word, translation):
+    def add_word(self, word, translation, language="Japanisch"):
         try:
             self.cur_vocab.execute(
-                """
-                INSERT INTO Japanisch
+                f"""
+                INSERT INTO {language}
                 (word, translation) VALUES (?, ?)
                 """,
                 (word, translation)
@@ -87,8 +87,8 @@ class VocabTrainer:
             print("word already in database")
 
 
-    def get_all_vocab_pairs(self):
-        self.cur_vocab.execute("SELECT word, translation, id FROM Japanisch")
+    def get_all_vocab_pairs(self, language="Japanisch"):
+        self.cur_vocab.execute(f"SELECT word, translation, id FROM {language}")
         rows = self.cur_vocab.fetchall()
 
         return rows
