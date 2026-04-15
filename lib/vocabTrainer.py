@@ -5,7 +5,7 @@ import math
 
 
 class VocabTrainer:
-    def __init__(self, vocab_db_path = "vocab_jap.db", stats_db_path="training_stats.db"):
+    def __init__(self, vocab_db_path = "vocab.db", stats_db_path="training_stats.db"):
         self.conn_vocab = sqlite3.connect(vocab_db_path)
         self.cur_vocab = self.conn_vocab.cursor()
         self.create_vocab_db()
