@@ -99,8 +99,8 @@ class VocabTrainer:
 
         return rows
 
-    def print_all_vocab(self):
-        pairs = self.get_all_vocab_pairs()
+    def print_all_vocab(self, language="Japanisch"):
+        pairs = self.get_all_vocab_pairs(language)
         # print vocab database
         for word, translation, _ in pairs:
             print(f"{word} \t  -> \t {translation}")

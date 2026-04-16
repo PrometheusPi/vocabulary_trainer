@@ -3,7 +3,7 @@ sys.path.append('../lib/')
 
 from vocabTrainer import VocabTrainer
 
-list_vocab_pairs = [
+list_vocab_pairs_jap = [
     ("すし", "Sushi"),
     ("みず", "Wasser"),
     ("ください", "bitte"),
@@ -34,12 +34,12 @@ list_vocab_pairs = [
 if __name__ == "__main__":
     vocab_trainer = VocabTrainer()
 
-    for word, translation in list_vocab_pairs:
-        vocab_trainer.add_word(word, translation)
+    for word, translation in list_vocab_pairs_jap:
+        vocab_trainer.add_word(word, translation, "Japanisch")
 
     print("Languages:")
     for lang in vocab_trainer.get_all_languages():
-        print(lang)
+        print(lang, ":")
 
-    print("Vocab list:")
-    vocab_trainer.print_all_vocab()
+        print("Vocab list:")
+        vocab_trainer.print_all_vocab(lang)
