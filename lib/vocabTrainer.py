@@ -87,6 +87,12 @@ class VocabTrainer:
             print("word already in database")
 
 
+    def get_all_languages(self):
+        self.cur_vocab.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        language_tables = self.cur_vocab.fetchall()
+        return [language_pair[0] for language_pair in language_tables]
+
+
     def get_all_vocab_pairs(self, language="Japanisch"):
         self.cur_vocab.execute(f"SELECT word, translation, id FROM {language}")
         rows = self.cur_vocab.fetchall()

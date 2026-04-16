@@ -37,5 +37,9 @@ if __name__ == "__main__":
     for word, translation in list_vocab_pairs:
         vocab_trainer.add_word(word, translation)
 
+    print("Languages:")
+    for lang in vocab_trainer.get_all_languages():
+        print(lang)
+
     print("Vocab list:")
     vocab_trainer.print_all_vocab()
