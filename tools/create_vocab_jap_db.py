@@ -30,13 +30,27 @@ list_vocab_pairs_jap = [
     ("アメリカじん", "Amerikaner"),
     ]
 
+list_vocab_pairs_ital = [
+    ("l'uomo", "der Mann"),
+    ("i uomini", "die Männer"),
+    ("la donna", "die Frau"),
+    ("il signor", "der Herr"),
+    ("la signora", "die Frau")
+    ]
 
 if __name__ == "__main__":
     vocab_trainer = VocabTrainer()
 
-    for word, translation in list_vocab_pairs_jap:
-        vocab_trainer.add_word(word, translation, "Japanisch")
 
+    vocab_trainer.create_vocab_db("Japanisch_Deutsch")
+    for word, translation in list_vocab_pairs_jap:
+        vocab_trainer.add_word(word, translation, "Japanisch_Deutsch")
+
+    vocab_trainer.create_vocab_db("Italienisch_Deutsch")        
+    for word, translation in list_vocab_pairs_ital:
+        vocab_trainer.add_word(word, translation, "Italienisch_Deutsch")
+
+        
     print("Languages:")
     for lang in vocab_trainer.get_all_languages():
         print(lang, ":")
