@@ -35,7 +35,9 @@ list_vocab_pairs_ital = [
     ("i uomini", "die Männer"),
     ("la donna", "die Frau"),
     ("il signor", "der Herr"),
-    ("la signora", "die Frau")
+    ("la signora", "die Frau"),
+    ("la signorina", "die junge Frau"),
+    ("il bebè", "das Baby")
     ]
 
 if __name__ == "__main__":
