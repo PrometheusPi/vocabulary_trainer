@@ -8,12 +8,9 @@ class VocabTrainer:
     def __init__(self, vocab_db_path = "vocab.db", stats_db_path="training_stats.db"):
         self.conn_vocab = sqlite3.connect(vocab_db_path)
         self.cur_vocab = self.conn_vocab.cursor()
-        self.create_vocab_db()
-
 
         self.conn_stats = sqlite3.connect(stats_db_path)
         self.cur_stats = self.conn_stats.cursor()
-        self.create_stats_db()
 
     def __del__(self):
         self.conn_vocab.close()
@@ -82,7 +79,7 @@ class VocabTrainer:
             )
             self.conn_vocab.commit()
             print("added word")
-            self.create_stats_db()
+            self.create_stats_db(language)
         except sqlite3.IntegrityError:
             print("word already in database")
 

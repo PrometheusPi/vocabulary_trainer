@@ -121,5 +121,7 @@ class VocabularyTrainer(App):
 
 if __name__ == "__main__":
     vocab_trainer = VocabTrainer()
+    vocab_trainer.create_vocab_db("Japanisch")
+    vocab_trainer.create_stats_db("Japanisch")
     app = VocabularyTrainer(vocab_trainer)
     app.run()
