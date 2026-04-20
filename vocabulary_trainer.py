@@ -82,18 +82,26 @@ class VocabularyTrainer(App):
     def __init__(self, vocab_trainer):
         super().__init__()
         self.vocab_trainer = vocab_trainer
+
+        self.list_of_languages = self.vocab_trainer.get_all_languages()
+        if len(self.list_of_languages) > 0:
+            self.selected_language = self.list_of_languages[0]
+        else:
+            self.selected_language = None
+
         self.daily_streak = 0
         #self.query_one("#streak", Static).update(f"Streak of 0 days")
-        
+
 
     def compose(self) -> ComposeResult:
-        yield Static("Vocabulary Trainer\nPress ctrl+q to exit\n\n", id="title")
+        yield Static(f"Vocabulary Trainer: {self.selected_language}\nPress ctrl+q to exit\n\n", id="title")
         yield Button("Test Vocabulary", id="test_vocab")
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
+        yield Button("Change Language", id="change_language")
         yield Button("Close App", id="quit")
         yield Static("", id="daily")
-        
+
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "test_vocab":
@@ -105,6 +113,8 @@ class VocabularyTrainer(App):
             self.push_screen(ListScreen(vocab_pairs), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
+        elif event.button.id == "change_language":
+            self.exit()
         elif event.button.id == "quit":
             self.exit()
 
