@@ -37,7 +37,12 @@ list_vocab_pairs_ital = [
     ("il signor", "der Herr"),
     ("la signora", "die Frau"),
     ("la signorina", "die junge Frau"),
-    ("il bebè", "das Baby")
+    ("il bebè", "das Baby"),
+    ("il bambini", "der Junge / das Kind"),
+    ("la bambina", "das Mädchen / das Kind"),
+    ("il ragazzo", "der Junge"), # issue with Deu -> Ital ambiguous
+    ("la ragazza", "das Mädchen"),
+    ("chiamare", "nennen"),
     ]
 
 if __name__ == "__main__":
@@ -48,11 +53,11 @@ if __name__ == "__main__":
     for word, translation in list_vocab_pairs_jap:
         vocab_trainer.add_word(word, translation, "Japanisch_Deutsch")
 
-    vocab_trainer.create_vocab_db("Italienisch_Deutsch")        
+    vocab_trainer.create_vocab_db("Italienisch_Deutsch")
     for word, translation in list_vocab_pairs_ital:
         vocab_trainer.add_word(word, translation, "Italienisch_Deutsch")
 
-        
+
     print("Languages:")
     for lang in vocab_trainer.get_all_languages():
         print(lang, ":")
