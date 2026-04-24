@@ -12,9 +12,21 @@ class VocabTrainer:
         self.conn_stats = sqlite3.connect(stats_db_path)
         self.cur_stats = self.conn_stats.cursor()
 
+        self.selected_language = None
+        all_lang = self.get_all_languages()
+        if len(all_lang) > 0:
+            self.selected_language = all_lang[0]
+
     def __del__(self):
         self.conn_vocab.close()
         self.conn_stats.close()
+
+    def select_language(self, name):
+        all_lang = self.get_all_languages()
+        if name in all_lang:
+            self.selected_language = name
+        else:
+            raise Exception(f"Your selection {name} is not in the language options: all_lang")
 
     def create_vocab_db(self, language="Japanisch"):
         # create database if not there
