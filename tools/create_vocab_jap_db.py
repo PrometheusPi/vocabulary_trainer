@@ -43,6 +43,13 @@ list_vocab_pairs_ital = [
     ("il ragazzo", "der Junge"), # issue with Deu -> Ital ambiguous
     ("la ragazza", "das Mädchen"),
     ("chiamare", "nennen"),
+    ("chimarsi", "heißen"),
+    ("il nome", "der Vorname / der Name"),
+    ("il cognome", "der Nachname"),
+    ("sposato / sposata", "verheiratet"),
+    ("celibe / nubile", "ledig / single"), # celibe only for males, nubile only for femals - how do I handle that?
+    ("divorziato / divorziata", "geschieden"),
+    ("vedovo / vedova", "verwitwet")
     ]
 
 if __name__ == "__main__":
