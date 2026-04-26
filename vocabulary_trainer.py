@@ -78,6 +78,20 @@ class ListScreen(ModalScreen):
             table.add_row(pair[0], pair[1])
 
 
+class SelectLanguagesScreen(ModalScreen):
+    def __init__(self, list_lang):
+        super().__init__()
+        self.list_lang = list_lang
+
+    def compose(self) -> ComposeResult:
+        yield Label("list of all languages", id="title")
+        for lang in self.list_lang:
+            yield Button(lang, id=lang)
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.dismiss(event.button.id)
+
+
 class VocabularyTrainer(App):
     def __init__(self, vocab_trainer):
         super().__init__()
@@ -114,7 +128,8 @@ class VocabularyTrainer(App):
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
         elif event.button.id == "change_language":
-            self.exit()
+            all_lang = self.vocab_trainer.get_all_languages()
+            self.push_screen(SelectLanguagesScreen(all_lang), self.on_change_lang)
         elif event.button.id == "quit":
             self.exit()
 
@@ -124,10 +139,13 @@ class VocabularyTrainer(App):
     def on_list(self, result):
         pass
 
-
     def on_add_word(self, word_pair: tuple):
         word, translation = word_pair
         self.vocab_trainer.add_word(word, translation)
+
+    def on_change_lang(self, selected_lang):
+        self.selected_language = selected_lang
+        self.vocab_trainer.select_language(self.selected_language)
 
 if __name__ == "__main__":
     vocab_trainer = VocabTrainer()
