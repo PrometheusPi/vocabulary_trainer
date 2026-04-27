@@ -28,7 +28,7 @@ class VocabTrainer:
         else:
             raise Exception(f"Your selection {name} is not in the language options: all_lang")
 
-    def create_vocab_db(self, language="Japanisch"):
+    def create_vocab_db(self, language="Japanisch_Deutsch"):
         # create database if not there
         self.cur_vocab.execute(
             f"""
@@ -42,7 +42,7 @@ class VocabTrainer:
         self.conn_vocab.commit() # TODO: do I need this here?
 
 
-    def create_stats_db(self, language="Japanisch"):
+    def create_stats_db(self, language="Japanisch_Deutsch"):
         # create user stats database
         # iterate through all vocab and add it if needed
         self.cur_stats.execute(
@@ -80,7 +80,7 @@ class VocabTrainer:
             self.conn_stats.commit()
 
 
-    def add_word(self, word, translation, language="Japanisch"):
+    def add_word(self, word, translation, language="Japanisch_Deutsch"):
         try:
             self.cur_vocab.execute(
                 f"""
@@ -102,13 +102,13 @@ class VocabTrainer:
         return [language_pair[0] for language_pair in language_tables]
 
 
-    def get_all_vocab_pairs(self, language="Japanisch"):
+    def get_all_vocab_pairs(self, language="Japanisch_Deutsch"):
         self.cur_vocab.execute(f"SELECT word, translation, id FROM {language}")
         rows = self.cur_vocab.fetchall()
 
         return rows
 
-    def print_all_vocab(self, language="Japanisch"):
+    def print_all_vocab(self, language="Japanisch_Deutsch"):
         pairs = self.get_all_vocab_pairs(language)
         # print vocab database
         for word, translation, _ in pairs:
@@ -198,5 +198,8 @@ class VocabTrainer:
         score_list = [(d, r) for _, _, _, d, r, _ in new_pairs]
 
         probabilty = self.convert_score_to_probability(score_list)
+
+        print("debug:", len(new_pairs), len(probabilty))
+        print("debug:", new_pairs, probabilty)
 
         return random.choices(new_pairs, probabilty, k=n)

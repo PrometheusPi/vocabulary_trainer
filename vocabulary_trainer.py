@@ -9,7 +9,7 @@ class TestVocabScreen(ModalScreen):
     def __init__(self, vocab_trainer):
         super().__init__()
         self.vocab_trainer = vocab_trainer
-        self.get_one = get_one = self.vocab_trainer.get_vocab_pairs(1)
+        self.get_one = self.vocab_trainer.get_vocab_pairs(1)
         self.word = self.get_one[0][0]
 
     def compose(self) -> ComposeResult:
