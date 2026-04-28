@@ -49,7 +49,18 @@ list_vocab_pairs_ital = [
     ("sposato / sposata", "verheiratet"),
     ("celibe / nubile", "ledig / single"), # celibe only for males, nubile only for femals - how do I handle that?
     ("divorziato / divorziata", "geschieden"),
-    ("vedovo / vedova", "verwitwet")
+    ("vedovo / vedova", "verwitwet"),
+    ("essere separato / essere separata", "gertennt leben"),
+    ("venire da", "kommen aus"),
+    ("essere di", "sein aus"),
+    ("l'indirizzo", "die Adresse"),
+    ("la città", "der Wohnort"), # how do distinguish this from "die Stadt"
+    ("la via", "die Straße"),
+    ("il numero (civico)", "die Hausnummer"),
+    ("il numero di telefono", "die Telefonnummer"),
+    ("il numero di cellulare", "die Handynummer"),
+    ("maggiorenne", "volljährig"),
+    ("minorenne", "minderjährig")
     ]
 
 if __name__ == "__main__":
