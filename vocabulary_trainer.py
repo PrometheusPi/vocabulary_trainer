@@ -106,9 +106,12 @@ class VocabularyTrainer(App):
         self.daily_streak = 0
         #self.query_one("#streak", Static).update(f"Streak of 0 days")
 
+    def create_title_string(self):
+        return f"Vocabulary Trainer: {self.selected_language}\nPress ctrl+q to exit\n\n"
 
     def compose(self) -> ComposeResult:
-        yield Static(f"Vocabulary Trainer: {self.selected_language}\nPress ctrl+q to exit\n\n", id="title")
+        self.header = Static(self.create_title_string(), id="title")
+        yield self.header
         yield Button("Test Vocabulary", id="test_vocab")
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
@@ -146,6 +149,7 @@ class VocabularyTrainer(App):
     def on_change_lang(self, selected_lang):
         self.selected_language = selected_lang
         self.vocab_trainer.select_language(self.selected_language)
+        self.header.update(self.create_title_string())
 
 if __name__ == "__main__":
     vocab_trainer = VocabTrainer()
