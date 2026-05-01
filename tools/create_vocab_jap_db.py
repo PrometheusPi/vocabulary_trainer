@@ -60,7 +60,15 @@ list_vocab_pairs_ital = [
     ("il numero di telefono", "die Telefonnummer"),
     ("il numero di cellulare", "die Handynummer"),
     ("maggiorenne", "volljährig"),
-    ("minorenne", "minderjährig")
+    ("minorenne", "minderjährig"),
+    ("buono / buona", "gut / lieb"), # git Person
+    ("bravo / brava", "gut / brav"), # gut Fähigkeit
+    ("cattivo / cattiva", "schlecht"),
+    ("gentile", "freundlich / nett / aufmerksam"),
+    ("cordiale", "herzlich"),
+    ("cortese", "höflich"),
+    ("sgarbato / sgarbata", "unhöflich"),
+    ("la pazienza", "die Geduld")
     ]
 
 if __name__ == "__main__":
