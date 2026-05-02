@@ -68,7 +68,20 @@ list_vocab_pairs_ital = [
     ("cordiale", "herzlich"),
     ("cortese", "höflich"),
     ("sgarbato / sgarbata", "unhöflich"),
-    ("la pazienza", "die Geduld")
+    ("la pazienza", "die Geduld"),
+    ("paziente", "geduldig"),
+    ("impaziente", "ungeduldig"),
+    ("prudente", "vorsichtig"),
+    ("imprudente", "unvorsichtig"),
+    ("serio / seria", "ernsthaft / ernst"),
+    ("simpatico / simpatica", "sympatisch / nett"),
+    ("antipatico / antipatica", "unsympathisch"),
+    ("pigro / pigra", "faul"),
+    ("allegro / allegra", "fröhlich / heiter / lustig"),
+    ("comico / comica", "komisch"),
+    ("depresso / depressa", "niedergeschlagen"),
+    ("calmo / calma", "ruhig"),
+    ("furbo / furba", "schlau")
     ]
 
 if __name__ == "__main__":
