@@ -57,9 +57,10 @@ class AddWordScreen(ModalScreen):
 
 
 class ListScreen(ModalScreen):
-    def __init__(self, vocab_pairs):
+    def __init__(self, vocab_pairs, lang):
         super().__init__()
         self.vocab_pairs = vocab_pairs
+        self.languages = lang.split("_")
 
     def compose(self) -> ComposeResult:
         yield Label("list of all vocabulary", id="title")
@@ -71,8 +72,9 @@ class ListScreen(ModalScreen):
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)
-        table.add_column("Japanisch")
-        table.add_column("Deutsch")
+        
+        table.add_column(self.languages[0])
+        table.add_column(self.languages[1])
 
         for pair in self.vocab_pairs:
             table.add_row(pair[0], pair[1])
@@ -127,7 +129,7 @@ class VocabularyTrainer(App):
             self.query_one("#daily", Static).update(f"Trained {self.daily_streak} vocabs today.")
         elif event.button.id == "list":
             vocab_pairs = self.vocab_trainer.get_all_vocab_pairs(self.selected_language)
-            self.push_screen(ListScreen(vocab_pairs), self.on_list)
+            self.push_screen(ListScreen(vocab_pairs, self.selected_language), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
         elif event.button.id == "change_language":
