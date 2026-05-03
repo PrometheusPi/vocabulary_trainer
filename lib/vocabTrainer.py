@@ -31,7 +31,7 @@ class VocabTrainer:
         else:
             raise Exception(f"Your selection {name} is not in the language options: all_lang")
 
-    def create_vocab_db(self, language="Japanisch_Deutsch"):
+    def create_vocab_db(self, language):
         # create database if not there
         self.cur_vocab.execute(
             f"""
@@ -83,7 +83,7 @@ class VocabTrainer:
             self.conn_stats.commit()
 
 
-    def add_word(self, word, translation, language="Japanisch_Deutsch"):
+    def add_word(self, word, translation, language):
         try:
             self.cur_vocab.execute(
                 f"""
@@ -111,7 +111,7 @@ class VocabTrainer:
 
         return rows
 
-    def print_all_vocab(self, language="Japanisch_Deutsch"):
+    def print_all_vocab(self, language):
         pairs = self.get_all_vocab_pairs(language)
         # print vocab database
         for word, translation, _ in pairs:
