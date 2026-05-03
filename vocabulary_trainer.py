@@ -29,11 +29,11 @@ class TestVocabScreen(ModalScreen):
             direction = self.get_one[0][5]
             if answer.strip() in [trans.strip() for trans in translation.split("/")]:
                 self.query_one("#result", Static).update(f"Correct! {word} is {translation}")
-                self.vocab_trainer.update_stats(vocab_id, direction, True)
+                self.vocab_trainer.update_stats(vocab_id, direction, True, self.vocab_trainer.selected_language)
             else:
                 self.query_one("#result",
                                Static).update(f"wrong - the correct answer for {word} is {translation} (you wrote: {answer})")
-                self.vocab_trainer.update_stats(vocab_id, direction, False)
+                self.vocab_trainer.update_stats(vocab_id, direction, False, self.vocab_trainer.selected_language)
             event.button.label = "Next"
         elif event.button.id == "action-button" and event.button.label == "Next":
             self.dismiss()

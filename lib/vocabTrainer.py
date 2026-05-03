@@ -17,6 +17,9 @@ class VocabTrainer:
         if len(all_lang) > 0:
             self.selected_language = all_lang[0]
 
+        for lang in all_lang:
+            self.create_stats_db(lang)
+
     def __del__(self):
         self.conn_vocab.close()
         self.conn_stats.close()
@@ -42,12 +45,12 @@ class VocabTrainer:
         self.conn_vocab.commit() # TODO: do I need this here?
 
 
-    def create_stats_db(self, language="Japanisch_Deutsch"):
+    def create_stats_db(self, language):
         # create user stats database
         # iterate through all vocab and add it if needed
         self.cur_stats.execute(
-            """
-            CREATE TABLE IF NOT EXISTS training_stats (
+            f"""
+            CREATE TABLE IF NOT EXISTS {language} (
             vocab_id INTEGER,
             last_trained TIMESTAMP,
             correct INTEGER DEFAULT 0,
@@ -63,15 +66,15 @@ class VocabTrainer:
         self.cur_vocab.execute(f"SELECT id FROM {language}")
         vocab_ids = {row[0] for row in self.cur_vocab.fetchall()}
 
-        self.cur_stats.execute("SELECT vocab_id FROM training_stats")
+        self.cur_stats.execute(f"SELECT vocab_id FROM {language}")
         stats_ids = {row[0] for row in self.cur_stats.fetchall()}
 
         missing_ids = vocab_ids - stats_ids
 
         for i in missing_ids:
             self.cur_stats.execute(
-                """
-                INSERT INTO training_stats
+                f"""
+                INSERT INTO {language}
                 (vocab_id, last_trained, correct, wrong, direction)
                 VALUES (?, NULL, 0, 0, TRUE),
                        (?, NULL, 0, 0, FALSE)
@@ -102,7 +105,7 @@ class VocabTrainer:
         return [language_pair[0] for language_pair in language_tables]
 
 
-    def get_all_vocab_pairs(self, language="Japanisch_Deutsch"):
+    def get_all_vocab_pairs(self, language):
         self.cur_vocab.execute(f"SELECT word, translation, id FROM {language}")
         rows = self.cur_vocab.fetchall()
 
@@ -115,7 +118,7 @@ class VocabTrainer:
             print(f"{word} \t  -> \t {translation}")
 
 
-    def update_stats(self, vocab_id, direction, correct):
+    def update_stats(self, vocab_id, direction, correct, language):
         now = datetime.now().isoformat(timespec='seconds')
 
         if correct:
@@ -123,12 +126,12 @@ class VocabTrainer:
         else:
             set_string = "wrong = wrong + 1"
 
-        sql_string = """
-        UPDATE training_stats
+        sql_string = f"""
+        UPDATE {language}
         SET last_trained = ?,
-        {}
+        {set_string}
         WHERE vocab_id = ? AND direction = ?;
-        """.format(set_string)
+        """
 
         self.cur_stats.execute(sql_string, (now, vocab_id, direction))
 
@@ -136,13 +139,13 @@ class VocabTrainer:
 
 
 
-    def get_learning_info(self, vocab_id, direction):
+    def get_learning_info(self, vocab_id, direction, language):
         # return when a word was last reviewed
         now = datetime.now().isoformat(timespec='seconds')
 
-        sql_string = """
+        sql_string = f"""
         SELECT last_trained, correct, wrong
-        FROM training_stats
+        FROM {language}
         WHERE vocab_id = ? AND direction = ?;
         """
 
@@ -173,26 +176,28 @@ class VocabTrainer:
 
     def print_stats(self):
         # for debug purposes
-        self.cur_stats.execute("SELECT * FROM training_stats")
-        rows = self.cur_stats.fetchall()
-        print("Stats:")
-        for row in rows:
-            print(row)
+        for lang in self.get_all_languages():
+            print(f"Stats {lang}:")
+            self.cur_stats.execute(f"SELECT * FROM {lang}")
+            rows = self.cur_stats.fetchall()
+            print("Stats:")
+            for row in rows:
+                print(row)
 
 
     def get_vocab_pairs(self, n):
         """
         n ... int: number of vocab pairs
         """
-        pairs = self.get_all_vocab_pairs()
+        pairs = self.get_all_vocab_pairs(self.selected_language)
 
         new_pairs = []
         for jap, deu, vocab_id in pairs:
             # jap -> deu
-            last, wrong_ratio = self.get_learning_info(vocab_id, True)
+            last, wrong_ratio = self.get_learning_info(vocab_id, True, self.selected_language)
             new_pairs.append((jap, deu, vocab_id, last, wrong_ratio, True))
             # deu -> jap
-            last, wrong_ratio = self.get_learning_info(vocab_id, False)
+            last, wrong_ratio = self.get_learning_info(vocab_id, False, self.selected_language)
             new_pairs.append((deu, jap, vocab_id, last, wrong_ratio, False))
 
         score_list = [(d, r) for _, _, _, d, r, _ in new_pairs]
