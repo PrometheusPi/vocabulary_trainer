@@ -126,7 +126,7 @@ class VocabularyTrainer(App):
             self.daily_streak += 1
             self.query_one("#daily", Static).update(f"Trained {self.daily_streak} vocabs today.")
         elif event.button.id == "list":
-            vocab_pairs = self.vocab_trainer.get_all_vocab_pairs()
+            vocab_pairs = self.vocab_trainer.get_all_vocab_pairs(self.selected_language)
             self.push_screen(ListScreen(vocab_pairs), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
