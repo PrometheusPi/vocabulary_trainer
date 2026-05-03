@@ -192,13 +192,13 @@ class VocabTrainer:
         pairs = self.get_all_vocab_pairs(self.selected_language)
 
         new_pairs = []
-        for jap, deu, vocab_id in pairs:
-            # jap -> deu
+        for word_lang_1, word_lang_2, vocab_id in pairs:
+            # word_lang_1 -> word_lang_2
             last, wrong_ratio = self.get_learning_info(vocab_id, True, self.selected_language)
-            new_pairs.append((jap, deu, vocab_id, last, wrong_ratio, True))
-            # deu -> jap
+            new_pairs.append((word_lang_1, word_lang_2, vocab_id, last, wrong_ratio, True))
+            # word_lang_2 -> word_lang_1
             last, wrong_ratio = self.get_learning_info(vocab_id, False, self.selected_language)
-            new_pairs.append((deu, jap, vocab_id, last, wrong_ratio, False))
+            new_pairs.append((word_lang_2, word_lang_1, vocab_id, last, wrong_ratio, False))
 
         score_list = [(d, r) for _, _, _, d, r, _ in new_pairs]
 
