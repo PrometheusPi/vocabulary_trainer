@@ -13,7 +13,7 @@ class TestVocabScreen(ModalScreen):
         self.word = self.get_one[0][0]
 
     def compose(self) -> ComposeResult:
-        yield Label(f"What is the translation of '{random.choice(self.word.split('/'))}'?", id="question")
+        yield Label(f"What is the translation of '{self.word.strip()}'?", id="question")
         yield Input(placeholder="Your answer", id="answer-input")
         yield Button("Check", id="action-button")
         yield Button("Exit", id="exit-button")
