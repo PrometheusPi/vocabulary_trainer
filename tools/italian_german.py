@@ -1,4 +1,4 @@
-list_vocab_pairs_ital_deu = [
+personal_information = [
     ("l'uomo", "der Mann"),
     ("i uomini", "die Männer"),
     ("la donna", "die Frau"),
@@ -28,7 +28,10 @@ list_vocab_pairs_ital_deu = [
     ("il numero di telefono", "die Telefonnummer"),
     ("il numero di cellulare", "die Handynummer"),
     ("maggiorenne", "volljährig"),
-    ("minorenne", "minderjährig"),
+    ("minorenne", "minderjährig")
+    ]
+
+character_traits = [
     ("buono / buona", "gut / lieb"), # git Person
     ("bravo / brava", "gut / brav"), # gut Fähigkeit
     ("cattivo / cattiva", "schlecht"),
@@ -51,3 +54,6 @@ list_vocab_pairs_ital_deu = [
     ("calmo / calma", "ruhig"),
     ("furbo / furba", "schlau")
     ]
+
+
+list_vocab_pairs_ital_deu = personal_information + character_traits
