@@ -52,7 +52,15 @@ character_traits = [
     ("comico / comica", "komisch"),
     ("depresso / depressa", "niedergeschlagen"),
     ("calmo / calma", "ruhig"),
-    ("furbo / furba", "schlau")
+    ("furbo / furba", "schlau"),
+    ("la stupidità", "die Dummheit"),
+    ("stupido / stupida", "dumm"),
+    ("il coraggio", "der Mut"),
+    ("coraggioso / coraggiosa", "mutig"),
+    ("il vigliacco / la vigliacca", "der Feigling"),
+    ("abituato / abituata", "gewöhnlich"),
+    ("la personalità", "die Persönlichkeit"),
+    ("il carattere", "der Charakter")
     ]
 
 
