@@ -63,5 +63,17 @@ character_traits = [
     ("il carattere", "der Charakter")
     ]
 
+appearance = [
+    ("l'aspetto", "das Aussehen"),
+    ("sembrare", "aussehen"),
+    ("carino / carina", "hübsch"),
+    ("la bellezza", "die Schönheit"),
+    ("bello / bella", "schön / gut  aussehend"), # wird wie bestimmter Artikel angepasst
+    ("attraente", "attraktiv"),
+    ("brutto / brutta", "hässlich"),
+    ("la faccia", "das Gesicht"),
+    ("la linea", "die Figur"),
+    ("grande", "groß"), # wird zu gran vor Substantiven mit Vokal
+    ]
 
 list_vocab_pairs_ital_deu = personal_information + character_traits
