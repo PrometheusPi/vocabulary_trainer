@@ -74,6 +74,16 @@ appearance = [
     ("la faccia", "das Gesicht"),
     ("la linea", "die Figur"),
     ("grande", "groß"), # wird zu gran vor Substantiven mit Vokal
+    ("alto / alta", "groß"),
+    ("grosso / grossa", "kräftig"),
+    ("grasso / grassa", "dick"),
+    ("piccolo / piccola / basso / bassa", "klein"), # the last relate only to hight
+    ("magro / magra", "dünn"),
+    ("minuto / minuta", "zierlich"),
+    ("snello / snella", "schlank"),
+    ("assomigliare", "ähnlich"),
+    ("assomigliarsi", "sich gleichen"),
+    ("come", "so wie")
     ]
 
-list_vocab_pairs_ital_deu = personal_information + character_traits
+list_vocab_pairs_ital_deu = personal_information + character_traits + appearance
