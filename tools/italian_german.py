@@ -83,7 +83,19 @@ appearance = [
     ("snello / snella", "schlank"),
     ("assomigliare", "ähnlich"),
     ("assomigliarsi", "sich gleichen"),
-    ("come", "so wie")
+    ("come", "so wie"),
+    ("il capello", "das Haar / das Kopfhaar"),
+    ("il pelo", "das Körperhaar"),
+    ("la pettinatura", "die Frisur"),
+    ("pettinare", "frisieren"),
+    ("biondo / bionda", "blond"),
+    ("castano / castana", "braunhaarig"),
+    ("nero / nera", "schwarz"),
+    ("rosso / rossa", "rot"),
+    ("grigio / grigia", "grau"),
+    ("moro / mora", "dunkelhaarig"), # auch Hautfarbe
+    ("chiaro / chiara", "hell"),
+    ("scuro / scura", "dunkel")
     ]
 
 list_vocab_pairs_ital_deu = personal_information + character_traits + appearance
