@@ -98,4 +98,21 @@ appearance = [
     ("scuro / scura", "dunkel")
     ]
 
-list_vocab_pairs_ital_deu = personal_information + character_traits + appearance
+clothing = [
+    ("l'abbigliamento", "die Kleidung"),
+    ("la moda", "die Mode"),
+    ("elegante", "elegant"),
+    ("vestirsi", "sich anziehen"),
+    ("mettersi", "anziehen"),
+    ("portare", "tragen / anhaben"),
+    ("togliersi", "ausziehen"),
+    ("spogliarsi", "sich ausziehen"),
+    ("cambiarsi", "such umziehen"),
+    ("provare", "anprobieren"),
+    ("stare", "stehen / passen"),
+    ("il numero", "die Schuhgröße"),
+    ("la taglia", "die Kleidergröße"),
+    ("stretto / stretta", "eng")
+    ]
+
+list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing
