@@ -112,7 +112,28 @@ clothing = [
     ("stare", "stehen / passen"),
     ("il numero", "die Schuhgröße"),
     ("la taglia", "die Kleidergröße"),
-    ("stretto / stretta", "eng")
+    ("stretto / stretta", "eng"),
+    ("largo / larga", "weit"),
+    ("corto / corta", "kurz"),
+    ("lungo / lunga", "lang"),
+    ("la giacca", "die Jacke"),
+    ("il cappotto", "der Mantel"),
+    ("l'impermeabile", "die Regenjacke"),
+    ("l'abito", "der Anzug / das Kleid"),
+    ("il tailleur", "das Kostüm"),
+    ("il vestito", "das Kleid"),
+    ("i vestiti", "die Kleidung"),
+    ("i pantaloni", "die Hose"),
+    ("i pantaloncini", "die Shorts"),
+    ("i jeans", "die Jeans"),
+    ("la gonna", "der Rock"),
+    ("la camicia", "das Hemd"),
+    ("la camicetta", "die Bluse"),
+    ("la maglia", "der Pullover"),
+    ("la maglietta", "das T-Shirt"),
+    ("la calza", "der Strumpf"),
+    ("il calzino", "die Socke"),
+    ("la scarpa", "der Schuh")
     ]
 
 list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing
