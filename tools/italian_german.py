@@ -133,7 +133,12 @@ clothing = [
     ("la maglietta", "das T-Shirt"),
     ("la calza", "der Strumpf"),
     ("il calzino", "die Socke"),
-    ("la scarpa", "der Schuh")
+    ("la scarpa", "der Schuh"),
+    ("il pigiama", "der Schlafanzug"),
+    ("la camicia da notte", "das Nachthemd"),
+    ("il costume da bagno", "der Badeanzug / die Badehose"),
+    ("le mutande", "der Slip / die Unterhose"),
+    ("il bikini", "der Bikini")
     ]
 
 list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing
