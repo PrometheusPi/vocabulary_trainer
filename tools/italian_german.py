@@ -141,4 +141,20 @@ clothing = [
     ("il bikini", "der Bikini")
     ]
 
-list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing
+accessory = [
+    ("la borsa", "die Tasche"),
+    ("la borsetta", "die Handtasche"),
+    ("il portafoglio", "das Portmonnaie / der Geldbeutel / die Brieftasche"),
+    ("il cappello", "der Hut / die Kappe"), # Achtung nur ein p ist das Haar
+    ("il berretto", "die Mütze"),
+    ("il guanto", "der Handschuh"),
+    ("l'ombrello", "der Regenschirm"),
+    ("l'anello", "der Ring"),
+    ("l'orologio", "die Uhr"),
+    ("la collana", "die Halskette"),
+    ("l'orecchino", "der Ohrring"),
+    ("gli occhiali", "die Brille"),
+    ("gli occhiali da sole", "die Sonnenbrille")
+    ]
+
+list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory
