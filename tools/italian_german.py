@@ -157,4 +157,28 @@ accessory = [
     ("gli occhiali da sole", "die Sonnenbrille")
     ]
 
-list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory
+family = [
+    ("familiare", "familiär"),
+    ("la famiglia", "die Familie"),
+    ("i genitori", "die Eltern"),
+    ("il padre", "der Vater"),
+    ("il papà", "der Papa"),
+    ("la madre", "die Mutter"),
+    ("la mamma", "die Mama / die Mutti"),
+    ("il figlio", "der Sohn"),
+    ("la figlia", "die Tochter"),
+    ("i figli", "die Kinder"),
+    ("il fratello", "der Bruder"),
+    ("la sorella", "die Schwester"),
+    ("i fratelli", "die Geschwister"),
+    ("lo zio", "der Onkel"),
+    ("la zia", "die Tante"),
+    ("il cugino", "der Cousin"),
+    ("la cugina", "die Cousine"),
+    ("il nonno", "der Großvater / der Opa"),
+    ("la nonna", "die Großmutter / die Oma"),
+    ("i nonni", "die Großeltern"),
+    ("convivere", "zusammenleben")
+    ]
+
+list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory + family
