@@ -178,7 +178,20 @@ family = [
     ("il nonno", "der Großvater / der Opa"),
     ("la nonna", "die Großmutter / die Oma"),
     ("i nonni", "die Großeltern"),
-    ("convivere", "zusammenleben")
+    ("convivere", "zusammenleben"),
+    ("occuparsi di", "sich kümmern um")
     ]
 
-list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory + family
+relationships_marriage = [
+    ("l'amore", "die Liebe"),
+    ("amare", "lieben"),
+    ("amarsi", "sich lieben"),
+    ("innamorato / innamorata", "verliebt"),
+    ("innamorarsi", "sich verlieben"),
+    ("voler bene a", "mögen"),
+    ("l'odio", "der Hass"),
+    ("odiare", "hassen"),
+    ("il bacio", "der Kuss")
+    ]
+
+list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory + family + relationships_marriage
