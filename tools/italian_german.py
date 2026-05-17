@@ -191,7 +191,20 @@ relationships_marriage = [
     ("voler bene a", "mögen"),
     ("l'odio", "der Hass"),
     ("odiare", "hassen"),
-    ("il bacio", "der Kuss")
+    ("il bacio", "der Kuss"),
+    ("baciare", "küssen"),
+    ("baciarsi", "sich küssen"),
+    ("l'abbraccio", "die Umarmung"),
+    ("abbracciare", "umarmen"),
+    ("sposarsi", "heiraten"),
+    ("il matrimonio", "die Hochzeit / die Trauung / die Ehe"),
+    ("il marito", "der Ehemann"),
+    ("la moglie", "die Ehefrau"),
+    ("la coppia", "das Paar / das Ehepaar"),
+    ("contrarre un'unione civile", "sich verpartnern"),
+    ("l'unione civile", "die Lebenspartnerschaft"),
+    ("fedele", "treu"),
+    ("infedele", "untreu")
     ]
 
 list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory + family + relationships_marriage
