@@ -204,7 +204,29 @@ relationships_marriage = [
     ("contrarre un'unione civile", "sich verpartnern"),
     ("l'unione civile", "die Lebenspartnerschaft"),
     ("fedele", "treu"),
-    ("infedele", "untreu")
+    ("infedele", "untreu"),
+    ("la separazione", "die Trennung"),
+    ("separasi", "sich trennen")
     ]
 
-list_vocab_pairs_ital_deu = personal_information + character_traits + appearance + clothing + accessory + family + relationships_marriage
+friendships_and_social_contacts = [
+    ("l'amicizia", "die Freundschaft"),
+    ("l'amico", "der Freund"),
+    ("l'amica", "die Freundin"),
+    ("essere amici", "befreundet sein"),
+    ("il giro di amici", "der Freundeskreis"),
+    ("amichevole", "freundschaftlich"),
+    ("personale", "persönlich"),
+    ("la gente", "die Leute"), # only singular
+    ("comune", "gemeinsam")
+    ]
+
+list_vocab_pairs_ital_deu = (personal_information
+                             + character_traits
+                             + appearance
+                             + clothing
+                             + accessory
+                             + family
+                             + relationships_marriage
+                             + friendships_and_social_contacts
+                             )
