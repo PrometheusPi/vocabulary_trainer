@@ -218,7 +218,19 @@ friendships_and_social_contacts = [
     ("amichevole", "freundschaftlich"),
     ("personale", "persönlich"),
     ("la gente", "die Leute"), # only singular
-    ("comune", "gemeinsam")
+    ("comune", "gemeinsam"),
+    ("il membro", "das Mitglied"),
+    ("il vicino", "der Nachbar"),
+    ("la vicina", "die Nachbarin"),
+    ("il tipo", "der Typ / der Kerl"),
+    ("vedersi", "sich treffen"),
+    ("l'incontro", "die Begegnung / das Treffen"),
+    ("incontrare", "treffen"),
+    ("l'appuntamento", "die Verabredung"),
+    ("darsi appuntamento", "sich verabreden"),
+    ("partecipare", "teilnehmen"),
+    ("invitare", "einladen"),
+    ("andare a trovare", "besuchen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
