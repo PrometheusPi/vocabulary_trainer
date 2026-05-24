@@ -230,9 +230,23 @@ friendships_and_social_contacts = [
     ("darsi appuntamento", "sich verabreden"),
     ("partecipare", "teilnehmen"),
     ("invitare", "einladen"),
-    ("andare a trovare", "besuchen")
+    ("andare a trovare", "besuchen"),
+    ("l'ospite", "der Gast"),
+    ("passare da", "vorbeikommen bei"),
+    ("la conoscenza", "die Bekanntschaft"),
+    ("il conoscente", "der Bekannte"),
+    ("la conoscente", "die Bekannte"),
+    ("il contatto", "der Kontakt"),
+    ("contattare", "Kontakt aufnehmen mit")
     ]
 
+life_cycle = [
+    ("umano / umana", "menschlich"),
+    ("l'essere umano", "der Mensch"),
+    ("la vita", "das Leben"),
+    ("vivo / viva", "lebendig"),
+    ("vivere / essere vivo / essere viva", "leben")
+    ]
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -241,4 +255,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + family
                              + relationships_marriage
                              + friendships_and_social_contacts
+                             + life_cycle
                              )
