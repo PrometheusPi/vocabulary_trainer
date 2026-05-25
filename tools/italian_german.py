@@ -245,8 +245,21 @@ life_cycle = [
     ("l'essere umano", "der Mensch"),
     ("la vita", "das Leben"),
     ("vivo / viva", "lebendig"),
-    ("vivere / essere vivo / essere viva", "leben")
+    ("vivere / essere vivo / essere viva", "leben"),
+    ("la nascita", "die Geburt"),
+    ("nascere", "geboren werden"),
+    ("l'età", "das Alter"), # this collides with la vecchiaia - this mean any age
+    ("avere ... anni", "... Jahre alt sein"),
+    ("l'infanzia", "die Kindheit"),
+    ("la gioventù", "die Jugend"),
+    ("giovane", "jung"),
+    ("l'adulto", "der Erwachsene / die Erwachsene"),
+    ("adulto / adulta", "erwachsen"),
+    ("la vecchiaia", "das Alter"), # this collides with l'età - this means old age
+    ("vecchio / vecchia", "alt"),
+    ("crescere", "wachsen / aufwachsen / großziehen")
     ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -257,3 +270,4 @@ list_vocab_pairs_ital_deu = (personal_information
                              + friendships_and_social_contacts
                              + life_cycle
                              )
+
