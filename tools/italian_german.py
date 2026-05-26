@@ -257,7 +257,19 @@ life_cycle = [
     ("adulto / adulta", "erwachsen"),
     ("la vecchiaia", "das Alter"), # this collides with l'età - this means old age
     ("vecchio / vecchia", "alt"),
-    ("crescere", "wachsen / aufwachsen / großziehen")
+    ("crescere", "wachsen / aufwachsen / großziehen"),
+    ("la morte", "der Tod"),
+    ("morto / morta", "tot"),
+    ("mortale", "tödlich"),
+    ("morire", "sterben"),
+    ("perdere la vita", "ums Leben kommen"),
+    ("il funerale", "die Beerdigung"),
+    ("la tomba", "das Grab"),
+    ("seppellire", "beerdigen"),
+    ("cremare", "einäschern"),
+    ("il lutto", "die Trauer"),
+    ("il vedovo", "der Witwer"),
+    ("la vedova", "die Witwe")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
@@ -270,4 +282,3 @@ list_vocab_pairs_ital_deu = (personal_information
                              + friendships_and_social_contacts
                              + life_cycle
                              )
-
