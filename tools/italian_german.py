@@ -272,6 +272,19 @@ life_cycle = [
     ("la vedova", "die Witwe")
     ]
 
+thoughts = [
+    ("il pensiero", "der Gedanke"),
+    ("pensare", "denken / nachdenken"),
+    ("pensare di", "halten von"),
+    ("il ricordo", "die Erinnerung"),
+    ("ricordare", "erinnern / daran denken / wissen"),
+    ("ricordarsi di", "sich erinnern an"),
+    ("dimenticare / dimenticarsi di", "vergessen"),
+    ("sembrare", "scheinen / glauben"),
+    ("la speranza", "die Hoffnung"),
+    ("sperare", "hoffen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -281,4 +294,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + relationships_marriage
                              + friendships_and_social_contacts
                              + life_cycle
+                             + thoughts
                              )
