@@ -282,7 +282,17 @@ thoughts = [
     ("dimenticare / dimenticarsi di", "vergessen"),
     ("sembrare", "scheinen / glauben"),
     ("la speranza", "die Hoffnung"),
-    ("sperare", "hoffen")
+    ("sperare", "hoffen"),
+    ("supporre", "annehmen / vermuten"),
+    ("possibile", "möglich"),
+    ("impossibile", "unmöglich"),
+    ("forse", "vielleicht"),
+    ("l'impressione", "der Eindruck"),
+    ("considerare", "bedenken / abwägen"),
+    ("immaginare / immaginarsi", "sich vorstellen / denken"),
+    ("chiedersi", "sich fragen"),
+    ("accorgersi", "bemerken"),
+    ("aspettarsi", "erwarten / rechnen mit")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
