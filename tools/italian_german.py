@@ -295,6 +295,21 @@ thoughts = [
     ("aspettarsi", "erwarten / rechnen mit")
     ]
 
+feelings = [
+    ("il sentimento", "das Gefühl / die Empfindung"),
+    ("provare", "empfinden"),
+    ("la felicità", "das Glück"),
+    ("felice", "glücklich"),
+    ("infelice", "unglücklich"),
+    ("l'allegria", "die Fröhlichkeit"),
+    ("contento / contenta", "froh"),
+    ("essere contento, essere contenta", "sich freuen"),
+    ("la gioia", "die Freude"),
+    ("il sorriso", "das Lächeln"),
+    ("sorridere", "lächeln / anlächeln"),
+    ("le risate", "das Lachen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -305,4 +320,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + friendships_and_social_contacts
                              + life_cycle
                              + thoughts
+                             + feelings
                              )
