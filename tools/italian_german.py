@@ -307,7 +307,18 @@ feelings = [
     ("la gioia", "die Freude"),
     ("il sorriso", "das Lächeln"),
     ("sorridere", "lächeln / anlächeln"),
-    ("le risate", "das Lachen")
+    ("le risate", "das Lachen"),
+    ("ridere", "lachen"),
+    ("il piacere", "die Freude / der Gefallen"),
+    ("piacere", "gefallen / mögen / gern tun"),
+    ("piacevole", "angenehm"),
+    ("spiacevole", "unangenehm"),
+    ("dispiacere", "leid tun"),
+    ("dispiacersi", "bedauern"),
+    ("purtroppo", "leider"),
+    ("preferito / preferita", "Lieblings- / bevorzugter / bevorzugte"),
+    ("preferire", "lieber mögen / lieber tun"),
+    ("non sopportare", "nicht leiden können")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
