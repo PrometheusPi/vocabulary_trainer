@@ -318,7 +318,18 @@ feelings = [
     ("purtroppo", "leider"),
     ("preferito / preferita", "Lieblings- / bevorzugter / bevorzugte"),
     ("preferire", "lieber mögen / lieber tun"),
-    ("non sopportare", "nicht leiden können")
+    ("non sopportare", "nicht leiden können"),
+    ("essere stufo di / essere stufa di", "satthaben"),
+    ("la sorpresa", "die Überraschung"),
+    ("sorprendere", "überraschen / erstaunen"),
+    ("soddisfatto / soddisfatta", "zufrieden"),
+    ("insoddisfatto / insoddisfatta", "unzufrieden"),
+    ("la paura", "die Angst"),
+    ("preoccupato /preoccupata", "beunruhigt / besorgt"),
+    ("preoccuparsi", "sich Sorgen machen"),
+    ("la tristezza", "die Traurigkeit"),
+    ("triste", "traurig"),
+    ("solo / sola", "einsam / allein")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
