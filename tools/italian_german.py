@@ -329,7 +329,22 @@ feelings = [
     ("preoccuparsi", "sich Sorgen machen"),
     ("la tristezza", "die Traurigkeit"),
     ("triste", "traurig"),
-    ("solo / sola", "einsam / allein")
+    ("solo / sola", "einsam / allein"),
+    ("piangere", "weinen"),
+    ("terribile", "schrecklich / furchtbar"),
+    ("orribile", "scheußlich")
+    ]
+
+senses = [
+    ("vedere", "sehen"),
+    ("guardare", "ansegen / nachsehen"),
+    ("l'occhiata", "der Blick"),
+    ("sentire", "hören / fühlen / riechen"),
+    ("il rumore", "das Geräusch / der Krach / der Lärm"),
+    ("toccare", "berühren / anfassen"),
+    ("l'odore", "der Geruch"),
+    ("avere odore", "riechen / Geruch haben"),
+    ("il profumo", "der Duft")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
@@ -343,4 +358,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + life_cycle
                              + thoughts
                              + feelings
+                             + senses
                              )
