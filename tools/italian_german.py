@@ -347,6 +347,17 @@ senses = [
     ("il profumo", "der Duft")
     ]
 
+conversations = [
+    ("il discorso", "das Gespräch / die Rede"),
+    ("parlare", "sprechen / reden"),
+    ("dire", "sagen"),
+    ("raccontare", "erzählen"),
+    ("chiamare", "rufen"),
+    ("il silenzio", "die Stille / das Schweigen"),
+    ("silenzioso / silenziosa", "schweigsam / still"),
+    ("zitto / zitta", "still / ruhig")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -359,4 +370,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + thoughts
                              + feelings
                              + senses
+                             + conversations
                              )
