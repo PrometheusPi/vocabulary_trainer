@@ -358,6 +358,19 @@ conversations = [
     ("zitto / zitta", "still / ruhig")
     ]
 
+questions = [
+    ("chiedere", "fragen / bitten / fordern / verlangen"),
+    ("pregare", "bitten"),
+    ("la domanda", "die Frage / der Antrag"),
+    ("la richiesta", "die Bitte / die Forderung"),
+    ("Come?", "Wie bitte?"),
+    ("Prego!", "Bitte!"),
+    ("per favore", "bitte"),
+    ("Potrebbe ...?", "Können Sie bitte ...?"),
+    ("la risposta", "die Antwort"),
+    ("rispondere", "antworten")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -371,4 +384,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + feelings
                              + senses
                              + conversations
+                             + questions
                              )
