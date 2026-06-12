@@ -368,7 +368,20 @@ questions = [
     ("per favore", "bitte"),
     ("Potrebbe ...?", "Können Sie bitte ...?"),
     ("la risposta", "die Antwort"),
-    ("rispondere", "antworten")
+    ("rispondere", "antworten"),
+    ("sì", "ja / doch"),
+    ("no", "nein"),
+    ("non", "nicht"),
+    ("ringraziare", "danken / sich bedanken"),
+    ("Grazie!", "Danke!"),
+    ("Tante grazie!", "Vielen Dank!"),
+    ("Grazie mille!", "Tausend Dank!"),
+    ("Di niente!", "Keine Ursache!"),
+    ("Non c'è di che!", "Gern geschehen!"),
+    ("la promessa", "das Versprechen"),
+    ("promettere", "versprechen"),
+    ("la volontà", "der Wille"),
+    ("volere", "wollen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
