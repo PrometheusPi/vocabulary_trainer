@@ -384,6 +384,19 @@ questions = [
     ("volere", "wollen")
     ]
 
+orders = [
+    ("l'ordine", "der Befehl"),
+    ("ordinare", "befehlen / anordnen"),
+    ("il permesso", "die Erlaubnis"),
+    ("permettere", "erlauben / gestatten / zulassen"),
+    ("potere", "dürfen"),
+    ("va bene", "in Ordnung"),
+    ("il divieto", "das Verbot"),
+    ("vietato / vietata", "verboten"),
+    ("vietare", "verbieten / untersagen"),
+    ("impedire di", "hindern an")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -398,4 +411,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + senses
                              + conversations
                              + questions
+                             + orders
                              )
