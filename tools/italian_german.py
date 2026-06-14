@@ -397,6 +397,20 @@ orders = [
     ("impedire di", "hindern an")
     ]
 
+discussion = [
+    ("l'opinione", "die Meinung"),
+    ("il parere", "die Ansicht"),
+    ("secondo me", "meiner Meinung nach"),
+    ("il consiglio", "der Rat"),
+    ("consigliare", "raten / empfehlen"),
+    ("suggerire", "empfehlen"),
+    ("proporre", "vorschlagen"),
+    ("accettare", "annehmen / akzeptieren"),
+    ("approvare", "zustimmen"),
+    ("d'accordo", "einverstanden"),
+    ("tollerare", "dulden / hinnehmen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -412,4 +426,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + conversations
                              + questions
                              + orders
+                             + discussion
                              )
