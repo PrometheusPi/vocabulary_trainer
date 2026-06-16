@@ -408,7 +408,21 @@ discussion = [
     ("accettare", "annehmen / akzeptieren"),
     ("approvare", "zustimmen"),
     ("d'accordo", "einverstanden"),
-    ("tollerare", "dulden / hinnehmen")
+    ("tollerare", "dulden / hinnehmen"),
+    ("convinto / convinta", "überzeugt"),
+    ("convincere", "überzeugen"),
+    ("avere ragione", "Recht haben"),
+    ("avere torto", "Unrecht haben"),
+    ("chiaro / chiara", "klar"),
+    ("evidente", "offensichtlich"),
+    ("esatto / esatta", "genau"),
+    ("l'importanza", "die Bedeutung / die Wichtigkeit"),
+    ("importante", "wichtig"),
+    ("la critica", "die Kritik"),
+    ("criticare", "kritisieren"),
+    ("cioè", "also / das heißt"),
+    ("per esempio", "zum Beispiel"),
+    ("contro", "gegen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
