@@ -425,6 +425,19 @@ discussion = [
     ("contro", "gegen")
     ]
 
+conflicts = [
+    ("la lite", "der Streit"),
+    ("litigare", "streiten"),
+    ("la rabbia", "der Ärger / die Wut / der Zorn"),
+    ("arrabbiato / arrabbiata", "böse / wütend"),
+    ("arrabbiarsi", "sich aufregen"),
+    ("fare arrabbiare", "ärgern"),
+    ("disturbare", "stören"),
+    ("prendersela", "übel nehmen"),
+    ("la lamentela", "die Klage / die Beschwerde"),
+    ("lamentarsi", "sich beschweren / sich beklagen / klagen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -441,4 +454,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + questions
                              + orders
                              + discussion
+                             + conflicts
                              )
