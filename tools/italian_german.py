@@ -438,6 +438,25 @@ conflicts = [
     ("lamentarsi", "sich beschweren / sich beklagen / klagen")
     ]
 
+greetings_leaving = [
+    ("Buongiorno!", "Guten Tag! / Guten Morgen!"),
+    ("Buonasera!", "Guten Abend!"),
+    ("Buonanotte!", "Gute Nacht!"),
+    ("Arrivederci!", "Auf Wiedersehen!"),
+    ("Salve!", "Hallo! / Auf Wiedersehen!"),
+    ("Ciao!", "Hallo! / Tschüss!"),
+    ("Ci vediamo!", "Bis dann!"),
+    ("Ci sentiamo!", "Wir hören voneinander!"),
+    ("A dopo!", "Bis nachher!"),
+    ("A presto!", "Bis bald!"),
+    ("A domani!", "Bis morgen!"),
+    ("Buona giornata!", "Einen schönen Tag!"),
+    ("Buona serata!", "Einen schönen Abend!"),
+    ("Benvenuto! / Benvenuta!", "Willkommen!"),
+    ("Molto piacere!", "Sehr erfreut!"),
+    ("Addio!", "Leb wohl! / Lebt wohl! / Leben Sie wohl!")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -455,4 +474,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + orders
                              + discussion
                              + conflicts
+                             + greetings_leaving
                              )
