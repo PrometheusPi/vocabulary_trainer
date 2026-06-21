@@ -457,6 +457,31 @@ greetings_leaving = [
     ("Addio!", "Leb wohl! / Lebt wohl! / Leben Sie wohl!")
     ]
 
+common_expression_phrases = [
+    ("Come sta?", "Wie geht es Ihnen?"),
+    ("Come stai?", "Wie geht es dir?"),
+    ("Bene, grazie!", "Danke, gut!"),
+    ("Avanti!", "Herein!"),
+    ("Si accomodi!", "Kommen Sie herein! / Nehmen Sie doch Platz!"),
+    ("Verrei ...", "Ich möchte ... / Ich hätte gerne ..."),
+    ("Vorresti ...?", "Möchtest du ...?"),
+    ("Vorrebbe ...?", "Möchten Sie ...?"),
+    ("Si serva!", "Bedienen Sie sich!"),
+    ("Serviti!", "Bedien dich! / Nimm dir!"),
+    ("Sì, grazie!", "Ja, gern! / Ja, bitte!"),
+    ("Ecco!", "Hier!"),
+    ("Speriamo!", "Hoffentlich!"),
+    ("Lo spero!", "Ich hoffe es!"),
+    ("Spero di sì!", "Ich hoffe!"),
+    ("Spero di no!", "Ich hoffe nicht!"),
+    ("Cosa succede?", "Was ist los?"),
+    ("Tutto bene!", "Alles klar!"),
+    ("Non importa!", "Das macht nichts!"),
+    ("Non c'è problema!", "Kein Problem!"),
+    ("Non te la prendere!", "Mach dir nichts draus!"),
+    ("Non se la prenda!", "Machen Sie sich nichts daraus!")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -475,4 +500,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + discussion
                              + conflicts
                              + greetings_leaving
+                             + common_expression_phrases
                              )
