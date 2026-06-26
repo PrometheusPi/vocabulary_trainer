@@ -482,6 +482,20 @@ common_expression_phrases = [
     ("Non se la prenda!", "Machen Sie sich nichts daraus!")
     ]
 
+general_activity = [
+    ("fare", "tun / machen"),
+    ("lasciare", "lassen"),
+    ("agire", "handeln"),
+    ("mettere", "stellen / legen / setzen"),
+    ("portare", "tragen"),
+    ("tenere", "halten"),
+    ("tiare", "ziehen"),
+    ("premere", "drücken"),
+    ("spingere", "schieben"),
+    ("girare", "drehen / umdrehen"),
+    ("usare", "benutzen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -501,4 +515,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + conflicts
                              + greetings_leaving
                              + common_expression_phrases
+                             + general_activity
                              )
