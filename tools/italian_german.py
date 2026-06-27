@@ -493,7 +493,19 @@ general_activity = [
     ("premere", "drücken"),
     ("spingere", "schieben"),
     ("girare", "drehen / umdrehen"),
-    ("usare", "benutzen")
+    ("usare", "benutzen"),
+    ("approfittare di", "nutzen"),
+    ("avere bisogno di", "brauchen"),
+    ("cercare", "suchen"),
+    ("trovare", "finden"),
+    ("ritrovare", "wiederfinden"),
+    ("separare", "trennen"),
+    ("riempire", "füllen / ausfüllen"),
+    ("trattare", "behandeln"),
+    ("pronto / pronta", "bereit / fertig"),
+    ("prepararsi", "sich fertig machen"),
+    ("la situazione", "die Lage / die Situation"),
+    ("transformare", "verändern")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
