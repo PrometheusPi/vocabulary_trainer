@@ -505,7 +505,14 @@ general_activity = [
     ("pronto / pronta", "bereit / fertig"),
     ("prepararsi", "sich fertig machen"),
     ("la situazione", "die Lage / die Situation"),
-    ("transformare", "verändern")
+    ("transformare", "verändern"),
+    ("succedere", "passieren / geschehen"),
+    ("dormire", "schlafen"),
+    ("addormentarsi", "einschlafen"),
+    ("svegliarsi", "aufwachen"),
+    ("alzarsi", "aufstehen"),
+    ("stanco / stanca", "müde"),
+    ("riposarsi", "sich ausruhen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
