@@ -515,6 +515,24 @@ general_activity = [
     ("riposarsi", "sich ausruhen")
     ]
 
+efforts_and_plans = [
+    ("l'intenzione", "die Absicht"),
+    ("intendere", "vorhaben"),
+    ("il progetto", "der Plan / das Projekt"),
+    ("progettare", "planen"),
+    ("il tentativo", "der Versuch"),
+    ("provare", "versuchen / probieren"),
+    ("preparare", "vorbereiten"),
+    ("darsi da fare", "sich Mühe geben / sich bemühen"),
+    ("la fatica", "die Anstrengung / die Mühe"),
+    ("faticoso / faticosa", "anstrengend"),
+    ("la decisione", "die Entscheidung / der Beschluss"),
+    ("decidere", "entscheiden / beschließen"),
+    ("la certezza", "die Sicherheit / die Gewissheit"),
+    ("certo / certa", "sicher"),
+    ("incerto / incerta", "unsicher")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -535,4 +553,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + greetings_leaving
                              + common_expression_phrases
                              + general_activity
+                             + efforts_and_plans
                              )
