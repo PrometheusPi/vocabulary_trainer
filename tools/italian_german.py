@@ -533,6 +533,16 @@ efforts_and_plans = [
     ("incerto / incerta", "unsicher")
     ]
 
+help_obligation = [
+    ("l'aiuto", "die Hilfe"),
+    ("aiutare", "helfen / unterstützen"),
+    ("il favore", "der Gefallen"),
+    ("utile", "hilfreich / nützlich"),
+    ("inutile", "zwecklos / sinnlos / nutzlos"),
+    ("rispettare", "respektieren / achten / befolgen"),
+    ("fare attenzione a", "achten auf")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -554,4 +564,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + common_expression_phrases
                              + general_activity
                              + efforts_and_plans
+                             + help_obligation
                              )
