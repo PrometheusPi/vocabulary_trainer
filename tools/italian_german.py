@@ -104,7 +104,7 @@ clothing = [
     ("elegante", "elegant"),
     ("vestirsi", "sich anziehen"),
     ("mettersi", "anziehen"),
-    ("portare", "tragen / anhaben"),
+    ("portare", "tragen / anhaben / bringen / mitbringen / mitnehmen"),
     ("togliersi", "ausziehen"),
     ("spogliarsi", "sich ausziehen"),
     ("cambiarsi", "such umziehen"),
@@ -487,7 +487,7 @@ general_activity = [
     ("lasciare", "lassen"),
     ("agire", "handeln"),
     ("mettere", "stellen / legen / setzen"),
-    ("portare", "tragen"),
+    #("portare", "tragen / anhaben / bringen / mitbringen / mitnehmen"), # used before
     ("tenere", "halten"),
     ("tiare", "ziehen"),
     ("premere", "drücken"),
@@ -543,6 +543,22 @@ help_obligation = [
     ("fare attenzione a", "achten auf")
     ]
 
+ownership_giving_taking = [
+    ("avere", "haben"),
+    ("possedere", "besitzen"),
+    ("tenere", "behalten"),
+    ("appartenere", "gehören"),
+    ("la proprietà", "das Eigentum"),
+    ("proprio / propria", "eigen"),
+    ("dare", "geben"),
+    ("passare", "reichen"),
+    ("prendere", "nehmen / holen"),
+    ("prestare", "leihen"),
+    ("lasciare", "überlassen / hinterlassen"),
+    ("ricevere", "bekommen / erhalten"),
+    #("portare", "bringen / mitbringen / mitnehmen") # used before 
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -565,4 +581,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + general_activity
                              + efforts_and_plans
                              + help_obligation
+                             + ownership_giving_taking
                              )
