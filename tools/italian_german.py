@@ -556,7 +556,30 @@ ownership_giving_taking = [
     ("prestare", "leihen"),
     ("lasciare", "überlassen / hinterlassen"),
     ("ricevere", "bekommen / erhalten"),
-    #("portare", "bringen / mitbringen / mitnehmen") # used before 
+    #("portare", "bringen / mitbringen / mitnehmen") # used before
+    ]
+
+body_parts_organs = [
+    ("il corpo", "der Körper"),
+    ("la testa", "der Kopf"),
+    ("la fronte", "die Stirn"),
+    ("il naso", "die Nase"),
+    ("l'occhio", "das Auge"),
+    ("l'orecchio", "das Ohr"),
+    ("le orecchie", "die Ohren"),
+    ("la bocca", "der Mund"),
+    ("il labbro", "die Lippe"),
+    ("le labbra", "die Lippen"),
+    ("la lingua", "die Zunge"),
+    ("il dente", "der Zahn"),
+    ("il collo", "der Hals"),
+    ("la gola", "der Hals / der Rachen"),
+    ("il petto", "die Brust"),
+    ("il seno", "der Busen"),
+    ("la pancia", "der Bauch"),
+    ("la schiena", "der Rücken"),
+    ("il sedere", "der Hintern"),
+    ("la spalla", "die Schulter")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
@@ -582,4 +605,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + efforts_and_plans
                              + help_obligation
                              + ownership_giving_taking
+                             + body_parts_organs
                              )
