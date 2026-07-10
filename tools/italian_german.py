@@ -579,7 +579,23 @@ body_parts_organs = [
     ("la pancia", "der Bauch"),
     ("la schiena", "der Rücken"),
     ("il sedere", "der Hintern"),
-    ("la spalla", "die Schulter")
+    ("la spalla", "die Schulter"),
+    ("il braccio", "der Arm"),
+    ("le braccia", "die Arme"),
+    ("i bracci", "die Flussarme"),
+    ("la mano", "die Hand"),
+    ("il dito", "der Finger / die Zehe"),
+    ("la dita", "die Finger / die Zehen"),
+    ("il pugno", "die Faust"),
+    ("la gamba", "das Bein"),
+    ("il ginocchio", "das Knie"),
+    ("le ginocchia", "die Knie"),
+    ("il piede", "der Fuß"),
+    ("l'osso", "der Knochen"),
+    ("le ossa", "die Knochen"),
+    ("il sangue", "das Blut"),
+    ("il cuore", "das Herz"),
+    ("il cervello", "das Gehirn")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
