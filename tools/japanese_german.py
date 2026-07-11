@@ -20,7 +20,10 @@ list_vocab_pairs_jap_deu = [
     ("こんばんは", "guten Abend / heute Abend"),
     ("はい", "ja"),
     ("いいえ", "nein"),
+    ("にほん", "Japan"),
     ("にほんじん", "Japaner"),
     ("カナダ", "Kanada"),
+    ("カナダじん", "Kanadier"),
+    ("メリカ", "Amerika"),
     ("アメリカじん", "Amerikaner"),
     ]
