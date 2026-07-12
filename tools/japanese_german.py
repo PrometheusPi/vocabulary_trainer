@@ -26,4 +26,9 @@ list_vocab_pairs_jap_deu = [
     ("カナダじん", "Kanadier"),
     ("メリカ", "Amerika"),
     ("アメリカじん", "Amerikaner"),
+    ("えき", "Bahnhof"),
+    ("バスてい", "Bushaltestelle"),
+    ("コンビニ", "Minimarkt"),
+    ("デパート", "Kaufhaus"),
+    ("ホテル", "Hotel")
     ]
