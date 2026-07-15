@@ -34,4 +34,6 @@ list_vocab_pairs_jap_deu = [
     ("ホテル", "Hotel"),
     ("だいがく", "Universität"),
     ("じゃない", "nicht"),
+    ("ここ", "hier"),
+    ("どこ", "wo"),
     ]
