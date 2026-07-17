@@ -36,4 +36,6 @@ list_vocab_pairs_jap_deu = [
     ("じゃない", "nicht"),
     ("ここ", "hier"),
     ("どこ", "wo"),
+    ("おおきい / 大きい", "groß"),
+    ("ちいさい / 小さい", "klein")
     ]
