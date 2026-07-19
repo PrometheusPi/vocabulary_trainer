@@ -1,25 +1,25 @@
-list_vocab_pairs_jap_deu = [
+food = [
     ("すし", "Sushi"),
     ("みず", "Wasser"),
-    ("ください", "bitte"),
     ("ごはん", "Reis"),
-    ("です", "da ist / es ist / ich bin"),
+    ]
+
+people_jobs = [
+    ("ひと", "Person"),
     ("いしゃ", "Arzt"),
     ("せんせい", "Lehrer"),
-    ("やさしい", "einfach / nett"),
     ("べんごし", "Anwalt"),
-    ("かっこいい", "cool"),
-    ("ひと", "Person"),
     ("がくせい", "Schüler"),
-    ("けん", "Ken / Ticket"),
-    ("こんにちは", "hallo / hi"),
-    ("どうぞよろしく", "schön dich kennenzulernen"),
-    ("はな", "Blume"),
-    ("なおみ", "Naomi"),
+    ]
+
+names = [
     ("さん", "Herr / Frau"),
-    ("こんばんは", "guten Abend / heute Abend"),
-    ("はい", "ja"),
-    ("いいえ", "nein"),
+    ("けん", "Ken / Ticket"),
+    ("はな", "Hannah, Blume"),
+    ("なおみ", "Naomi"),
+    ]
+
+nationalities = [
     ("にほん", "Japan"),
     ("にほんじん", "Japaner"),
     ("カナダ", "Kanada"),
@@ -30,15 +30,44 @@ list_vocab_pairs_jap_deu = [
     ("ベトナムじん", "Vietnamese"),
     ("ブラジル", "Brasilien"),
     ("ブラジルじん", "Brasilianer"),
+    ]
+
+places = [
     ("えき", "Bahnhof"),
     ("バスてい", "Bushaltestelle"),
     ("コンビニ", "Minimarkt"),
     ("デパート", "Kaufhaus"),
     ("ホテル", "Hotel"),
     ("だいがく", "Universität"),
-    ("じゃない", "nicht"),
     ("ここ", "hier"),
     ("どこ", "wo"),
-    ("おおきい / 大きい", "groß"),
-    ("ちいさい / 小さい", "klein")
     ]
+
+phrases = [
+    ("ください", "bitte"),
+    ("です", "da ist / es ist / ich bin"),
+    ("こんにちは", "hallo / hi"),
+    ("どうぞよろしく", "schön dich kennenzulernen"),
+    ("こんばんは", "guten Abend / heute Abend"),
+    ("はい", "ja"),
+    ("いいえ", "nein"),
+    ("じゃない", "nicht"),
+    ]
+
+adjectives = [
+    ("やさしい", "einfach / nett"),
+    ("かっこいい", "cool"),
+    ("おおきい / 大きい", "groß"),
+    ("ちいさい / 小さい", "klein"),
+    ]
+
+
+list_vocab_pairs_jap_deu =(
+    food
+    + people_jobs
+    + names
+    + nationalities
+    + places
+    + phrases
+    + adjectives
+    )
