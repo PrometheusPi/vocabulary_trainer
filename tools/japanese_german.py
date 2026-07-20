@@ -2,6 +2,11 @@ food = [
     ("すし", "Sushi"),
     ("みず", "Wasser"),
     ("ごはん", "Reis"),
+    ("ラーメン", "Ramen"),
+    ("ピザ", "Pizza"),
+    ("サラダ", "Salat"),
+    ("カレー", "Curry / Currygericht"),
+    ("カリー", "Curry / Currygewürz")
     ]
 
 people_jobs = [
