@@ -66,6 +66,11 @@ adjectives = [
     ("ちいさい / 小さい", "klein"),
     ]
 
+objects = [
+    ("かばん", "Tasche"),
+    ("コート", "Mantel / Gericht")
+    ]
+
 
 list_vocab_pairs_jap_deu =(
     food
@@ -75,4 +80,5 @@ list_vocab_pairs_jap_deu =(
     + places
     + phrases
     + adjectives
+    + objects
     )
