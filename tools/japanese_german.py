@@ -71,6 +71,10 @@ objects = [
     ("コート", "Mantel / Gericht")
     ]
 
+possessive_pronouns = [
+    ("わたしの", "mein / meins")
+    ]
+
 
 list_vocab_pairs_jap_deu =(
     food
@@ -81,4 +85,5 @@ list_vocab_pairs_jap_deu =(
     + phrases
     + adjectives
     + objects
+    + possessive_pronouns
     )
