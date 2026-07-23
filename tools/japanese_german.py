@@ -66,6 +66,11 @@ adjectives = [
     ("ちいさい / 小さい", "klein"),
     ]
 
+colors = [
+    ("あかい / 赤い", "rot"),
+    ("しろい / 白い", "weiß")
+    ]
+
 objects = [
     ("かばん", "Tasche"),
     ("コート", "Mantel / Gericht")
@@ -84,6 +89,7 @@ list_vocab_pairs_jap_deu =(
     + places
     + phrases
     + adjectives
+    + colors
     + objects
     + possessive_pronouns
     )
