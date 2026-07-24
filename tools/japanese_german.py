@@ -6,7 +6,8 @@ food = [
     ("ピザ", "Pizza"),
     ("サラダ", "Salat"),
     ("カレー", "Curry / Currygericht"),
-    ("カリー", "Curry / Currygewürz")
+    ("カリー", "Curry / Currygewürz"),
+    ("ケーキ", "Kuchen")
     ]
 
 people_jobs = [
