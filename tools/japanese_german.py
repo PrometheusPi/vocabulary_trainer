@@ -58,6 +58,7 @@ phrases = [
     ("はい", "ja"),
     ("いいえ", "nein"),
     ("じゃない", "nicht"),
+    ("か", "?")
     ]
 
 adjectives = [
@@ -65,6 +66,7 @@ adjectives = [
     ("かっこいい", "cool"),
     ("おおきい / 大きい", "groß"),
     ("ちいさい / 小さい", "klein"),
+    ("おいしい", "lecker")
     ]
 
 colors = [
