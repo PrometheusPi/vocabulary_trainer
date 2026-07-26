@@ -7,7 +7,9 @@ food = [
     ("サラダ", "Salat"),
     ("カレー", "Curry / Currygericht"),
     ("カリー", "Curry / Currygewürz"),
-    ("ケーキ", "Kuchen")
+    ("ケーキ", "Kuchen"),
+    ("おちゃ", "grüner Tee / Tee"),
+    ("みず", "Wasser")
     ]
 
 people_jobs = [
@@ -55,10 +57,14 @@ phrases = [
     ("こんにちは", "hallo / hi"),
     ("どうぞよろしく", "schön dich kennenzulernen"),
     ("こんばんは", "guten Abend / heute Abend"),
+    ("またあした", "bis morgen"),
     ("はい", "ja"),
     ("いいえ", "nein"),
     ("じゃない", "nicht"),
-    ("か", "?")
+    ("か", "?"),
+    ("と", "und"),
+    ("これ", "dies / das hier / jetzt"),
+    
     ]
 
 adjectives = [
