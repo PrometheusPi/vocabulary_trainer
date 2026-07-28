@@ -598,6 +598,12 @@ body_parts_organs = [
     ("il cervello", "das Gehirn")
     ]
 
+illness_handycaps = [
+    ("la malattia", "die Krankheit"),
+    ("la salute", "die Gesundheit"),
+    ("sano / sana", "gesund"),
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -622,4 +628,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + help_obligation
                              + ownership_giving_taking
                              + body_parts_organs
+                             + illness_handycaps
                              )
