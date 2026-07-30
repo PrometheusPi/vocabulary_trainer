@@ -602,6 +602,18 @@ illness_handycaps = [
     ("la malattia", "die Krankheit"),
     ("la salute", "die Gesundheit"),
     ("sano / sana", "gesund"),
+    ("sentirsi", "sich fühlen"),
+    ("stare bene", "gut gehen"),
+    ("fisico / fisica", "körperlich"),
+    ("mentale", "Geistes- / psychisch"),
+    ("guarito /guarita", "gesund / geheilt"),
+    ("guarire", "gesund werden / heilen"),
+    ("riprendersi", "sich erholen"),
+    ("la forza", "die Kraft"),
+    ("forte", "kräftig"),
+    ("debole", "schwach"),
+    ("malato / malata", "krank"),
+    ("ammalarsi", "krank werden")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
