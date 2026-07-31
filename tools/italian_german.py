@@ -613,7 +613,20 @@ illness_handycaps = [
     ("forte", "kräftig"),
     ("debole", "schwach"),
     ("malato / malata", "krank"),
-    ("ammalarsi", "krank werden")
+    ("ammalarsi", "krank werden"),
+    ("il dolore", "der Schmerz"),
+    ("fare male", "wehtun"),
+    ("avere male", "Schmerzen haben"),
+    ("soffrire", "leiden"),
+    ("sanguinare", "bluten"),
+    ("la ferita", "die Wunde / die Verletzung"),
+    ("ferisi", "sich verletzen"),
+    ("rompersi", "sich brechen"),
+    ("il raffreddore", "die Erkältung"),
+    ("raffreddato / raffreddata", "erkältet"),
+    ("la tosse", "der Husten"),
+    ("tossire", "husten"),
+    ("la febbre", "das Fieber"),
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
