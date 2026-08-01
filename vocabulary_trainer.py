@@ -72,7 +72,32 @@ class ListScreen(ModalScreen):
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)
-        
+
+        table.add_column(self.languages[0])
+        table.add_column(self.languages[1])
+
+        for pair in self.vocab_pairs:
+            table.add_row(pair[0], pair[1])
+
+
+class LearnScreen(ModalScreen):
+    def __init__(self, vocab_pairs, lang):
+        super().__init__()
+        self.vocab_pairs = vocab_pairs
+        self.languages = lang.split("_")
+
+    def compose(self) -> ComposeResult:
+        yield Label("learn vocabulary", id="title")
+        yield DataTable()
+        yield Button("Next", id="next")
+        yield Button("Exit", id="exit")
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.dismiss()
+
+    def on_mount(self) -> None:
+        table = self.query_one(DataTable)
+
         table.add_column(self.languages[0])
         table.add_column(self.languages[1])
 
@@ -117,6 +142,7 @@ class VocabularyTrainer(App):
         yield Button("Test Vocabulary", id="test_vocab")
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
+        yield Button("Learn", id="learn")
         yield Button("Change Language", id="change_language")
         yield Button("Close App", id="quit")
         yield Static("", id="daily")
@@ -132,6 +158,9 @@ class VocabularyTrainer(App):
             self.push_screen(ListScreen(vocab_pairs, self.selected_language), self.on_list)
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
+        elif event.button.id == "learn":
+            vocab_pairs = self.vocab_trainer.get_all_vocab_pairs(self.selected_language)[:10]
+            self.push_screen(LearnScreen(vocab_pairs, self.selected_language), self.on_learn)
         elif event.button.id == "change_language":
             all_lang = self.vocab_trainer.get_all_languages()
             self.push_screen(SelectLanguagesScreen(all_lang), self.on_change_lang)
@@ -147,6 +176,9 @@ class VocabularyTrainer(App):
     def on_add_word(self, word_pair: tuple):
         word, translation = word_pair
         self.vocab_trainer.add_word(word, translation)
+
+    def on_learn(self, result):
+        pass
 
     def on_change_lang(self, selected_lang):
         self.selected_language = selected_lang
