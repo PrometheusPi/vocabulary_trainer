@@ -85,6 +85,8 @@ class LearnScreen(ModalScreen):
         super().__init__()
         self.vocab_pairs = vocab_pairs
         self.languages = lang.split("_")
+        self.show_index = 0
+        self.show_count = len(vocab_pairs)
 
     def compose(self) -> ComposeResult:
         yield Label("learn vocabulary", id="title")
@@ -93,7 +95,13 @@ class LearnScreen(ModalScreen):
         yield Button("Exit", id="exit")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
-        self.dismiss()
+        if event.button.id == "next":
+            table = self.query_one(DataTable)
+            self.show_index = (self.show_index + 1) % self.show_count
+            pair = self.vocab_pairs[self.show_index]
+            table.add_row(pair[0], pair[1])
+        else:
+            self.dismiss()
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)
@@ -101,8 +109,8 @@ class LearnScreen(ModalScreen):
         table.add_column(self.languages[0])
         table.add_column(self.languages[1])
 
-        for pair in self.vocab_pairs:
-            table.add_row(pair[0], pair[1])
+        pair = self.vocab_pairs[0]
+        table.add_row(pair[0], pair[1])
 
 
 class SelectLanguagesScreen(ModalScreen):
@@ -139,7 +147,7 @@ class VocabularyTrainer(App):
     def compose(self) -> ComposeResult:
         self.header = Static(self.create_title_string(), id="title")
         yield self.header
-        yield Button("Test Vocabulary", id="test_vocab")
+        yield Button("Test all Vocabulary", id="test_vocab")
         yield Button("Show vocabulary", id="list")
         yield Button("Add Word", id="add_word")
         yield Button("Learn", id="learn")
