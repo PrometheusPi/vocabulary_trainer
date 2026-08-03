@@ -97,8 +97,10 @@ class LearnScreen(ModalScreen):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "next":
             table = self.query_one(DataTable)
+            old_pair = self.vocab_pairs[self.show_index]
             self.show_index = (self.show_index + 1) % self.show_count
             pair = self.vocab_pairs[self.show_index]
+            table.clear()
             table.add_row(pair[0], pair[1])
         else:
             self.dismiss()
