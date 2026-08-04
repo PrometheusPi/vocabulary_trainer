@@ -91,7 +91,8 @@ class LearnScreen(ModalScreen):
     def compose(self) -> ComposeResult:
         yield Label("learn vocabulary", id="title")
         yield DataTable()
-        yield Button("Next", id="next")
+        yield Button("Learn Next", id="next")
+        yield Button("Start Testing", id="start_test")
         yield Button("Exit", id="exit")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
