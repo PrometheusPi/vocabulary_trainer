@@ -627,6 +627,18 @@ illness_handycaps = [
     ("la tosse", "der Husten"),
     ("tossire", "husten"),
     ("la febbre", "das Fieber"),
+    ("la nausea", "die Übelkeit"),
+    ("avere la nausea", "übel sein"),
+    ("il mal di testa", "die Kopfschmerzen"),
+    ("il sudore", "der Schweiß"),
+    ("sudare", "schwitzen"),
+    ("svenire", "in Ohnmacht fallen"),
+    ("privo di sensi / priva di sensi", "bewusstlos"),
+    ("l'handicappato", "der Behinderte"),
+    ("l'handicappata", "die Behinderte"),
+    ("handicappato / handicappata", "behindert"),
+    ("l'abitudine", "die Gewohnheit / die Angewohnheit"),
+    ("abituarsi a", "sich gewöhnen an")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
