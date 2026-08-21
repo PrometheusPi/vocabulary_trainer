@@ -641,6 +641,23 @@ illness_handycaps = [
     ("abituarsi a", "sich gewöhnen an")
     ]
 
+at_the_doctor = [
+    ("l'ospedale", "das Krankenhaus"),
+    ("la clinica", "die Klinik"),
+    ("il paziente", "der Patient"),
+    ("la paziente", "die Patientin"),
+    ("la visita", "die Untersuchung"),
+    ("visitare", "untersuchen"),
+    ("la cura", "die Behandlung"),
+    ("curare", "behandeln"),
+    ("medico / medica", "medizinisch / ärztlich"),
+    ("il respiro", "der Atem"),
+    ("respirare", "atmen"),
+    ("l'operazione", "die Operation"),
+    ("operare", "operieren"),
+    ("l'intervento", "der Eingriff")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -666,4 +683,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + ownership_giving_taking
                              + body_parts_organs
                              + illness_handycaps
+                             + at_the_doctor
                              )
