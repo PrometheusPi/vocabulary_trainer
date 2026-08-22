@@ -655,7 +655,16 @@ at_the_doctor = [
     ("respirare", "atmen"),
     ("l'operazione", "die Operation"),
     ("operare", "operieren"),
-    ("l'intervento", "der Eingriff")
+    ("l'intervento", "der Eingriff"),
+    ("ricevere", "Sprechstunde haben"), # is ignored due to previous definition
+    ("prescrivere", "verschreiben"),
+    ("preventivo / preventiva", "vorbeugend"),
+    ("prevenire", "vorbeugen"),
+    ("l'ambulatorio", "die Praxis"),
+    ("la farmacia", "die Apotheke"),
+    ("la medicina", "die Medizin / das Medikament"),
+    ("la pastiglia", "die Tablette / die Pille"),
+    ("la ricetta", "das Rezept")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
