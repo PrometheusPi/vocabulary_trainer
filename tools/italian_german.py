@@ -667,6 +667,24 @@ at_the_doctor = [
     ("la ricetta", "das Rezept")
     ]
 
+emergency_call = [
+    ("il pericolo", "die Gefahr"),
+    ("pericoloso / pericolosa", "gefährlich"),
+    ("i vigili del fuoco", "die Feuerwehr"),
+    ("la polizia", "die Polizei"),
+    ("l'ambulanza", "der Krankenwagen / der Rettungswagen"),
+    ("l'incendio", "der Brand"),
+    ("l'incidente", "der Unfall"),
+    ("lo scontro", "der Zusammenstoß"),
+    ("scontrarsi", "zusammenstoßen"),
+    ("salvare", "retten"),
+    ("gridare aiuto", "um Hilfe rufen"),
+    ("Aiuto!", "Hilfe!"),
+    ("Attento! / Attenta! / Occhio!", "Achtung!"),
+    ("l'allarme", "der Alarm"),
+    ("il numero di emergenza", "die Notrufnummer / der Notruf")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -693,4 +711,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + body_parts_organs
                              + illness_handycaps
                              + at_the_doctor
+                             + emergency_call
                              )
