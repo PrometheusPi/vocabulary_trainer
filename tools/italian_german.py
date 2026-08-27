@@ -685,6 +685,14 @@ emergency_call = [
     ("il numero di emergenza", "die Notrufnummer / der Notruf")
     ]
 
+body_care = [
+    ("lavarsi", "sich waschen"),
+    ("fare la doccia", "duschen"),
+    ("fare il bagno", "baden / ein Bad nehmen"),
+    ("asciugarsi", "sich abtrocknen"),
+    ("pettinarsi", "sich kämmen"),
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -712,4 +720,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + illness_handycaps
                              + at_the_doctor
                              + emergency_call
+                             + body_care
                              )
