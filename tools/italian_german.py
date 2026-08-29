@@ -691,6 +691,19 @@ body_care = [
     ("fare il bagno", "baden / ein Bad nehmen"),
     ("asciugarsi", "sich abtrocknen"),
     ("pettinarsi", "sich kämmen"),
+    ("spazzolarsi", "sich bürsten"),
+    ("lavarsi i denti", "Zähne putzen"),
+    ("farsi la barba", "sich rasieren"),
+    ("il sapone", "die Seife"),
+    ("lo shampoo", "das Shampoo"),
+    ("il docciaschiuma", "das Duschgel"),
+    ("la crema", "die Creme"),
+    ("il pettine", "der Kamm"),
+    ("la spazzola", "die Haarbürste / die Bürste"),
+    ("lo spazzolino / lo spazzolino da denti", "die Zahnbürste"),
+    ("il dentifricio", "die Zahnpasta"),
+    ("il fazzoletto / il fazzoletto di carta", "das Papiertaschentuch / das Taschentuch"),
+    ("il profumo", "das Parfüm") # not registered
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
