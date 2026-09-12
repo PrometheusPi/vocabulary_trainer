@@ -706,6 +706,19 @@ body_care = [
     ("il profumo", "das Parfüm") # not registered
     ]
 
+learning = [
+    ("imparare", "lernen"),
+    ("studiare", "lernen / studieren"),
+    ("il sapere", "das Wissen"),
+    ("sapere", "wissen / können"),
+    ("capire", "verstehen"),
+    ("l'interesse", "das Interesse"),
+    ("interessato / interessata", "interessiert"),
+    ("interessante", "interessant"),
+    ("interessarsi di", "sich interessieren für"),
+    ("il corso", "der Kurs")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -734,4 +747,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + at_the_doctor
                              + emergency_call
                              + body_care
+                             + learning
                              )
