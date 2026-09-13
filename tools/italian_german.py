@@ -716,7 +716,20 @@ learning = [
     ("interessato / interessata", "interessiert"),
     ("interessante", "interessant"),
     ("interessarsi di", "sich interessieren für"),
-    ("il corso", "der Kurs")
+    ("il corso", "der Kurs"),
+    ("la lezione", "der Unterricht / die Unterrichtsstunde / die Lektion"),
+    ("l'e-learning", "das E-Learning"),
+    ("spiegare", "erklären"),
+    ("l'esempio", "das Beispiel"),
+    ("l'esercizio", "die Übung"),
+    ("esercitarsi", "üben"),
+    ("ripetere", "wiederholen"),
+    ("il quaderno", "das Heft"),
+    ("la pagina", "die Seite"),
+    ("la soluzione", "die Lösung"),
+    ("risolvere", "lösen"),
+    ("sbagliarsi", "sich irren"),
+    ("giusto / giusta", "richtig")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
