@@ -729,7 +729,18 @@ learning = [
     ("la soluzione", "die Lösung"),
     ("risolvere", "lösen"),
     ("sbagliarsi", "sich irren"),
-    ("giusto / giusta", "richtig")
+    ("giusto / giusta", "richtig"),
+    ("sbagliato / sbagliata", "falsch"),
+    ("sbagliare a fare", "falsch machen"),
+    ("l'errore", "der Fehler"),
+    ("il test", "der Test"),
+    ("testare", "testen"),
+    ("l'esame / la prova", "die Prüfung / das Examen"),
+    ("l'orale", "die mündliche Prüfung"),
+    ("orale", "mündlich"),
+    ("lo scritto", "die schriftliche Prüfung"),
+    ("scritto / scritta", "schriftlich"),
+    ("superare", "bestehen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
