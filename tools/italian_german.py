@@ -740,7 +740,17 @@ learning = [
     ("orale", "mündlich"),
     ("lo scritto", "die schriftliche Prüfung"),
     ("scritto / scritta", "schriftlich"),
-    ("superare", "bestehen")
+    ("superare", "bestehen"),
+    ("la pagella", "das Zeugnis"),
+    ("migliorare", "verbessern / sich verbessern"),
+    ("il voto", "die Note"),
+    ("bene / bravo", "gut"), # adv. vs adj. 
+    ("meglio / migliore", "besser / am besten"), # adverb s adjective - how do I do that here? 
+    ("l'ottimo", "die Note sehr gut"),
+    ("ottimo / ottima", "ausgezeichnet"),
+    ("eccellente", "hervorragend"),
+    ("male", "schlecht"),
+    ("peggio / peggiore", "schlechter / am schlechtesten") # adv. vs adj.
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
