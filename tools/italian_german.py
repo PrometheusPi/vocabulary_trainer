@@ -750,7 +750,18 @@ learning = [
     ("ottimo / ottima", "ausgezeichnet"),
     ("eccellente", "hervorragend"),
     ("male", "schlecht"),
-    ("peggio / peggiore", "schlechter / am schlechtesten") # adv. vs adj.
+    ("peggio / peggiore", "schlechter / am schlechtesten"), # adv. vs adj.
+    ("la difficoltà", "die Schwierigkeit"),
+    ("il problema", "das Problem"),
+    ("facile", "leicht / einfach"),
+    ("difficile", "schwierig / schwer"),
+    ("l'attenzione", "die Aufmerksamkeit"),
+    ("attento / attenta", "aufmerksam"),
+    ("frequentare", "besuchen"),
+    ("presente", "anwesend"),
+    ("essere assente", "fehlen"),
+    ("descrivere", "beschreiben"),
+    ("correggere", "korrigieren")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
