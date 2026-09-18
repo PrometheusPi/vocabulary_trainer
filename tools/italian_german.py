@@ -764,6 +764,21 @@ learning = [
     ("correggere", "korrigieren")
     ]
 
+language = [
+    ("la lettera", "der Buchstabe"),
+    ("l'alfabeto", "das Alphabet"),
+    ("fare lo spelling di", "buchstabieren"),
+    ("la parola", "das Wort"),
+    ("la frase", "der Satz"),
+    ("il sostantivo", "das Substantiv"),
+    ("il verbo", "das Verb"),
+    ("l'aggettivo", "das Adjektiv"),
+    ("l'avverbio", "das Adverb"),
+    ("il singolare", "der Singular"),
+    ("il plurale", "der Plural"),
+    ("il testo", "der Text")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -793,4 +808,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + emergency_call
                              + body_care
                              + learning
+                             + language
                              )
