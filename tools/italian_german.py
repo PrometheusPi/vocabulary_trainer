@@ -776,7 +776,17 @@ language = [
     ("l'avverbio", "das Adverb"),
     ("il singolare", "der Singular"),
     ("il plurale", "der Plural"),
-    ("il testo", "der Text")
+    ("il testo", "der Text"),
+    ("il significato", "die Bedeutung"),
+    ("significare", "bedeuten"),
+    ("il simbolo", "das Zeichen / das Symbol"),
+    ("la traduzione", "die Übersetzung"),
+    ("tradurre", "übersetzen"),
+    ("il proverbio", "das Sprichwort"),
+    ("il dizionario / il vocabolario", "das Wörterbuch"),
+    ("il linguaggio / la lingua", "die Sprache"),
+    ("la lingua straniera", "die Fremdsprache"),
+    ("la lingua materna", "die Muttersprache")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
