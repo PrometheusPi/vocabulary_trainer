@@ -789,6 +789,19 @@ language = [
     ("la lingua materna", "die Muttersprache")
     ]
 
+school_university_education = [
+    ("la scuola", "die Schule"),
+    ("scolastico / scolastica", "Schul-"),
+    ("l'università", "die Universität"),
+    ("gli studi", "das Studium"),
+    ("la laurea magistrale", "der Master"),
+    ("la laurea breve", "der Bachelor"),
+    ("l'allievo", "der Schüler"),
+    ("l'allieva", "die Schülerin"),
+    ("lo studente", "der Student / der Schüler"),
+    ("la studentessa", "die Studentin / die Schülerin")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -819,4 +832,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + body_care
                              + learning
                              + language
+                             + school_university_education
                              )
