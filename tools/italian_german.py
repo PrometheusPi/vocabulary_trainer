@@ -799,7 +799,17 @@ school_university_education = [
     ("l'allievo", "der Schüler"),
     ("l'allieva", "die Schülerin"),
     ("lo studente", "der Student / der Schüler"),
-    ("la studentessa", "die Studentin / die Schülerin")
+    ("la studentessa", "die Studentin / die Schülerin"),
+    ("il professore", "der Professor"),
+    ("la professoressa", "die Professorin"),
+    ("insegnare", "unterrichten / lehren / beibringen"),
+    ("la classe", "die Klasse"),
+    ("l'aula", "das Klassenzimmer"),
+    ("la materia", "das Fach / das Schulfach"),
+    ("l'orario delle lezioni", "der Stundenplan"),
+    ("l'intervallo", "die Pause"),
+    ("i compiti", "die Hausaufgaben"),
+    ("il compito in classe", "die Klassenarbeit")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
