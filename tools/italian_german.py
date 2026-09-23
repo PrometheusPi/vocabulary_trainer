@@ -812,6 +812,18 @@ school_university_education = [
     ("il compito in classe", "die Klassenarbeit")
     ]
 
+job = [
+    ("la professione / il mestiere", "der Beruf"),
+    ("professionale", "Berufs- / professionell / beruflich"),
+    ("esercitare", "ausüben"),
+    ("il lavoro", "die Arbeit"),
+    ("il posto / il posto di lavoro", "die Stelle / der Areitsplatz"),
+    ("lavorare", "arbeiten"),
+    ("il personale", "das Personal"),
+    ("il dipendente / la dipendente", "der Mitarbeiter / die Mitarbeiterin"),
+    ("il collega / la collega", "der Kollege / die Kollegin")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -843,4 +855,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + learning
                              + language
                              + school_university_education
+                             + job
                              )
