@@ -821,7 +821,16 @@ job = [
     ("lavorare", "arbeiten"),
     ("il personale", "das Personal"),
     ("il dipendente / la dipendente", "der Mitarbeiter / die Mitarbeiterin"),
-    ("il collega / la collega", "der Kollege / die Kollegin")
+    ("il collega / la collega", "der Kollege / die Kollegin"),
+    ("dirigere", "leiten"),
+    ("prendere la qualifica di", "sich qualifizieren zu"),
+    ("l'aggiornamento", "die Fortbildung"),
+    ("adatto / adatta", "geeignet"),
+    ("essere capace di", "können"),
+    ("capace", "fähig"),
+    ("incapace", "unfähig"),
+    ("essere pratico / essere pratica", "sich auskennen"),
+    ("intendersi di", "sich auskennen mit")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
