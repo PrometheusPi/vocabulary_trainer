@@ -830,7 +830,15 @@ job = [
     ("capace", "fähig"),
     ("incapace", "unfähig"),
     ("essere pratico / essere pratica", "sich auskennen"),
-    ("intendersi di", "sich auskennen mit")
+    ("intendersi di", "sich auskennen mit"),
+    ("l'amministratore", "der Geschäftsführer / der Verwalter"),
+    ("l'amministratrice", "die Geschäftsführerin / die Verwalterin"),
+    ("l'avvocato", "der Anwalt"),
+    ("l'avvocata", "die Anwältin"),
+    ("l'insegnante", "der Lehrer / die Lehrerin"),
+    ("il maestro", "der Grundschullehrer"),
+    ("la maestra", "die Grundschullehrerin"),
+    ("il medico", "der Arzt / die Ärztin")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
