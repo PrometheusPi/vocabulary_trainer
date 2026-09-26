@@ -838,7 +838,15 @@ job = [
     ("l'insegnante", "der Lehrer / die Lehrerin"),
     ("il maestro", "der Grundschullehrer"),
     ("la maestra", "die Grundschullehrerin"),
-    ("il medico", "der Arzt / die Ärztin")
+    ("il medico", "der Arzt / die Ärztin"),
+    ("il dentista", "der Zaharzt"),
+    ("la dentista", "die Zahnärztin"),
+    ("il farmacista", "der Apotheker"),
+    ("la farmacista", "die Apothekerin"),
+    ("l'infermiere", "der Krankenpfleger"),
+    ("l'infermiera", "die Krankenschwester"),
+    ("il poliziotto", "der Ploizist"),
+    ("la poliziotta", "die Polizistin")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
