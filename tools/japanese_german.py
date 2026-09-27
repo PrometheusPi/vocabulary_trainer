@@ -25,6 +25,8 @@ names = [
     ("けん", "Ken / Ticket"),
     ("はな", "Hannah, Blume"),
     ("なおみ", "Naomi"),
+    ("やまぐち / 山口", "Yamaguchi"),
+    ("たなか / 田中", "Tanaka"),
     ]
 
 nationalities = [
@@ -86,7 +88,8 @@ colors = [
 
 objects = [
     ("かばん", "Tasche"),
-    ("コート", "Mantel / Gericht")
+    ("コート", "Mantel / Gericht"),
+    ("てぶくろ / 手袋", "Handschuh")
     ]
 
 possessive_pronouns = [
