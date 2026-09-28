@@ -845,8 +845,18 @@ job = [
     ("la farmacista", "die Apothekerin"),
     ("l'infermiere", "der Krankenpfleger"),
     ("l'infermiera", "die Krankenschwester"),
-    ("il poliziotto", "der Ploizist"),
-    ("la poliziotta", "die Polizistin")
+    ("il poliziotto", "der Polizist"),
+    ("la poliziotta", "die Polizistin"),
+    ("il parrucchiere", "der Friseur"),
+    ("la parrucchiera", "die Friseurin"),
+    ("il segretario", "der Sekretär"),
+    ("la segretaria", "die Sekretärin"),
+    ("il commesso", "der Verkäufer"),
+    ("la commessa", "die Verkäuferin"),
+    ("il casalingo", "der Hausmann"),
+    ("la casalinga", "die Hausfrau"),
+    ("il cameriere", "der Kellner / der Ober"),
+    ("la cameriera", "die Kellnerin")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
