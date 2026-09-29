@@ -859,6 +859,23 @@ job = [
     ("la cameriera", "die Kellnerin")
     ]
 
+office = [
+    ("scrivere", "schreiben / aufschreiben"),
+    ("segnare", "notieren"),
+    ("fotocopiare", "kopieren"),
+    ("l'ufficio", "das Büro"),
+    ("la scrivania", "der Schreibtisch"),
+    ("la fotocopia", "die Kopie"),
+    ("il calendario", "der Kalender"),
+    ("l'agenda", "der Terminkalender"),
+    ("il biglietto da visita", "die Visitenkarte"),
+    ("i documenti", "die Unterlagen"),
+    ("la corrispondenza", "die Korrespondenz"),
+    ("l'appunto", "die Notiz"),
+    ("la carta", "das Papier"),
+    ("il foglio", "das Blatt")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -891,4 +908,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + language
                              + school_university_education
                              + job
+                             + office
                              )
