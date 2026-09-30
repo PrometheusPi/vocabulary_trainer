@@ -873,7 +873,12 @@ office = [
     ("la corrispondenza", "die Korrespondenz"),
     ("l'appunto", "die Notiz"),
     ("la carta", "das Papier"),
-    ("il foglio", "das Blatt")
+    ("il foglio", "das Blatt"),
+    ("il foglietto", "der Zettel"),
+    ("la penna", "der Stift"),
+    ("la penna stilografica", "der Füller"),
+    ("la biro", "der Kugelschreiber"),
+    ("le forbici", "die Schere")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
