@@ -881,6 +881,15 @@ office = [
     ("le forbici", "die Schere")
     ]
 
+application_hiring = [
+    ("assumere", "einstellen"),
+    ("impiegato /impiegata", "angestellt"),
+    ("l'occupazione", "die Anstellung / die Beschäftigung"),
+    ("occupare", "beschäftigen"),
+    ("la disoccupazione", "die Arbeitslosigkeit"),
+    ("disoccupato / disoccupata", "arbeitslos")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -914,4 +923,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + school_university_education
                              + job
                              + office
+                             + application_hiring
                              )
