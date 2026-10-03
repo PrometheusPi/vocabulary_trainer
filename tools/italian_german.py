@@ -890,6 +890,21 @@ application_hiring = [
     ("disoccupato / disoccupata", "arbeitslos")
     ]
 
+work_conditions = [
+    ("il sindacato", "die Gewerkschaft"),
+    ("lo sciopero", "der Streik"),
+    ("scioperare", "streiken"),
+    ("la pausa", "die Ruhepause / die Pause"),
+    ("il salario", "der Lohn"),
+    ("lo stipendio", "das Gehalt"),
+    ("l'aumento", "die Erhöhung"),
+    ("il guadagno", "der Verdienst"),
+    ("guadagnare", "verdienen"),
+    ("guadagnarsi da vivere", "seinen Lebensunterhalt verdienen"),
+    ("la pensione", "die Rente"),
+    ("il contratto", "der Vertrag")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -924,4 +939,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + job
                              + office
                              + application_hiring
+                             + work_conditions
                              )
