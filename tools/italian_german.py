@@ -905,6 +905,23 @@ work_conditions = [
     ("il contratto", "der Vertrag")
     ]
 
+reading = [
+    ("il lettore", "der Leser"),
+    ("la lettrice", "die Leserin"),
+    ("leggere", "lesen / vorlesen"),
+    ("scrivere", "schreiben / verfassen"), # conflict!
+    ("il libro", "das Buch"),
+    ("il titolo", "der Titel"),
+    ("la biblioteca", "die Bücherei / die Bibliothek"),
+    ("la storia", "die Geschichte"),
+    ("il racconto", "die Erzählung"),
+    ("il romanzo", "der Roman"),
+    ("il giallo", "der Krimi"),
+    ("la favola", "das Märchen"),
+    ("la novella", "die Novelle"),
+    ("il fumetto", "der Comic")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -940,4 +957,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + office
                              + application_hiring
                              + work_conditions
+                             + reading
                              )
