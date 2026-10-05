@@ -922,6 +922,20 @@ reading = [
     ("il fumetto", "der Comic")
     ]
 
+music = [
+    ("la musica", "die Musik"),
+    ("musicale", "Musik- / musikalisch"),
+    ("ascoltare", "hören / zuhören"),
+    ("la canzone", "das Lied"),
+    ("cantare", "singen"),
+    ("la voce", "die Stimme"),
+    ("il volume", "die Lautstärke"),
+    ("piano", "leise"),
+    ("forte", "laut"), # conflict!
+    ("il concerto", "das Konzert"),
+    ("l'opera", "die Oper / das Werk")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -958,4 +972,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + application_hiring
                              + work_conditions
                              + reading
+                             + music
                              )
