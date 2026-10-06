@@ -933,7 +933,15 @@ music = [
     ("piano", "leise"),
     ("forte", "laut"), # conflict!
     ("il concerto", "das Konzert"),
-    ("l'opera", "die Oper / das Werk")
+    ("l'opera", "die Oper / das Werk"),
+    ("classico / classica", "klassisch"),
+    ("popolare", "populär"),
+    ("la melodia", "die Melodie"),
+    ("il ritmo", "der Rhythmus"),
+    ("il suono", "der Klang"),
+    ("suonare", "spielen / läuten / klingen"),
+    ("il tono", "der Ton"),
+    ("la nota", "die Note")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
