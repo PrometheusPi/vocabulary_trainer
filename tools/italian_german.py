@@ -941,7 +941,13 @@ music = [
     ("il suono", "der Klang"),
     ("suonare", "spielen / läuten / klingen"),
     ("il tono", "der Ton"),
-    ("la nota", "die Note")
+    ("la nota", "die Note"),
+    ("alto / alta", "hoch"),
+    ("basso / bassa", "tief"),
+    ("il gruppo", "die Band / die Gruppe"),
+    ("il coro", "der Chor"),
+    ("lo strumento", "das Instrument"),
+    ("il pianoforte", "das Klavier")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
