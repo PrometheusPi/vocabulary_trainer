@@ -947,7 +947,13 @@ music = [
     ("il gruppo", "die Band / die Gruppe"),
     ("il coro", "der Chor"),
     ("lo strumento", "das Instrument"),
-    ("il pianoforte", "das Klavier")
+    ("il pianoforte", "das Klavier"),
+    ("il violino", "die Geige / die Violine"),
+    ("il flauto", "die Flöte"),
+    ("la chitarra", "die Gitarre"),
+    ("la chitarra elettrica", "die E-Gitarre"),
+    ("il basso", "der Bass"),
+    ("il CD", "die CD")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
