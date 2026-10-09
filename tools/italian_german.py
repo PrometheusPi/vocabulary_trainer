@@ -956,6 +956,19 @@ music = [
     ("il CD", "die CD")
     ]
 
+art = [
+    ("l'arte", "die Kunst"),
+    ("il quadro", "das Bild / das Gemälde"),
+    ("antico / antica", "antik / alt"),
+    ("moderno / moderna", "modern"),
+    ("creare", "schaffen"),
+    ("il disegno", "die Zeichnung"),
+    ("disegnare", "zeichnen"),
+    ("mostrare", "zeigen"),
+    ("la mostra", "die Ausstellung"),
+    ("la galleria", "die Galerie")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -993,4 +1006,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + work_conditions
                              + reading
                              + music
+                             + art
                              )
