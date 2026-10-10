@@ -969,6 +969,19 @@ art = [
     ("la galleria", "die Galerie")
     ]
 
+theater_and_movie = [
+    ("il teatro", "das Theater"),
+    ("l'opera teatrale", "das Theaterstück"),
+    ("lo spettacolo", "die Vorstellung"),
+    ("il film", "der Film"),
+    ("il cinema", "das Kino"),
+    ("il biglietto / il biglietto d'ingresso", "die Eintrittskarte / die Karte"),
+    ("il trama", "die Handlung"),
+    ("mettere in scena", "inszenieren"),
+    ("il dialogo", "der Dialog"),
+    ("il monologo", "der Monolog")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1007,4 +1020,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + reading
                              + music
                              + art
+                             + theater_and_movie
                              )
