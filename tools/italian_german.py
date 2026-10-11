@@ -982,6 +982,19 @@ theater_and_movie = [
     ("il monologo", "der Monolog")
     ]
 
+party = [
+    ("la festa", "das Fest / die Party"),
+    ("festeggiare", "feiern"),
+    ("il compleanno", "der Geburtstag"),
+    ("l'anniversario", "der Jahrestag"),
+    ("l'anniversario di matrimonio", "der Hochzeitstag"),
+    ("il padrone di casa", "der Gastgeber"),
+    ("la padrona di casa", "die Gastgeberin"),
+    ("accogliere", "empfangen"),
+    ("dare il benvenuto", "willkommen heißen"),
+    ("gli auguri", "der Glückwunsch")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1021,4 +1034,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + music
                              + art
                              + theater_and_movie
+                             + party
                              )
