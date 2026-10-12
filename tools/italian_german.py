@@ -992,7 +992,15 @@ party = [
     ("la padrona di casa", "die Gastgeberin"),
     ("accogliere", "empfangen"),
     ("dare il benvenuto", "willkommen heißen"),
-    ("gli auguri", "der Glückwunsch")
+    ("gli auguri", "der Glückwunsch"),
+    ("Tanti auguri!", "Alles Gute! / Herzlichen Glückwunsch!"),
+    ("congratularsi", "gratulieren / beglückwünschen"),
+    ("il regalo", "das Geschenk"),
+    ("regalare", "schenken"),
+    ("avere luogo", "stattfinden"),
+    ("la manifestazione", "die Veranstaltung / die Demonstration"),
+    ("il luna park", "der Jahrmarkt"),
+    ("il circo", "der Zirkus")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
