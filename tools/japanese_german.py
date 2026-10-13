@@ -96,6 +96,18 @@ possessive_pronouns = [
     ("わたしの", "mein / meins")
     ]
 
+numbers = [
+    ("一 / いち", "eins"),
+    ("二 / に", "zwei"),
+    ("三 / さん", "drei"),
+    ("時 / じ", "Uhr")
+    ]
+
+asmr = [
+    ("ひざまくら", "Kniekopfkissen / knee pillow"),
+    ("みみかき", "Ohrreinigung / Ohrreinigungslöffel")
+    ]
+
 
 list_vocab_pairs_jap_deu =(
     food
@@ -108,4 +120,6 @@ list_vocab_pairs_jap_deu =(
     + colors
     + objects
     + possessive_pronouns
+    + numbers
+    + asmr
     )
