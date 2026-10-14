@@ -1000,7 +1000,13 @@ party = [
     ("avere luogo", "stattfinden"),
     ("la manifestazione", "die Veranstaltung / die Demonstration"),
     ("il luna park", "der Jahrmarkt"),
-    ("il circo", "der Zirkus")
+    ("il circo", "der Zirkus"),
+    ("la tradizione", "die Tradition"),
+    ("tradizionale", "traditionell"),
+    ("l'usanza", "der Brauch / die Sitte"),
+    ("fantastico / fantastica", "großartig / fantastisch"),
+    ("geniale", "toll / genial"),
+    ("eccezionale", "super")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
