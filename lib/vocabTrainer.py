@@ -208,3 +208,44 @@ class VocabTrainer:
         print("debug:", new_pairs, probabilty)
 
         return random.choices(new_pairs, probabilty, k=n)
+
+
+    def get_untrained_vocab_pairs(self, language, n=10):
+        """
+        return (up to) n (words, translation, id) sets that have never
+        been trained in either forward or backward direction
+        (`last_trained` is `NULL`)
+        """
+        # get such vocab
+        self.cur_stats.execute(
+            f"""
+            SELECT vocab_id
+            FROM {language}
+            GROUP BY vocab_id
+            HAVING MAX(last_trained) IS NULL
+            ORDER BY RANDOM()
+            LIMIT ?
+            """,
+            (n,)
+            )
+        ids_for_training = [row[0] for row in self.cur_stats.fetchall()]
+
+        if not ids_for_training:
+            return [ ] # empty list
+
+
+        # placeholders `?` with same length as ids_for_training
+        placeholders = ",".join("?" * len(ids_for_training))
+
+        self.cur_vocab.execute(
+            f"""
+            SELECT word, translation, id
+            FROM {language}
+            WHERE id IN ({placeholders})
+            """,
+            ids_for_training
+            )
+
+        return self.cur_vocab.fetchall()
+    
+            
