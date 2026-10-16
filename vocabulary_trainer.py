@@ -115,6 +115,56 @@ class LearnScreen(ModalScreen):
         pair = self.vocab_pairs[0]
         table.add_row(pair[0], pair[1])
 
+class LearningSessionScreen(ModalScreen):
+    """
+    Two-staged learning session for never-before trained words
+
+    stage 1: browse each word pair for laerning, mark it as laerned or for repetition
+    stage 2: quiz all paits in both directions until all are answered correctly
+    """
+
+    def __init__(self, vocab_trainer, vocab_pairs, language):
+        super().__init__()
+        self.vocab_trainer = vocab_trainer
+        self.language = language
+        self.languages_pair = language.split("_")
+
+        self.vocab_pairs = list(vocab_pairs) # full list - keep untouched
+        self.browse_queue = list(vocab_pairs) # for stage 1
+        self.quiz_items = [] # for stage 2
+        self.session_results = []
+
+    def compose(self) -> ComposeResult:
+        # always (top)
+        yield Label("", id="title")
+        yield Static("", id="card")
+
+        # stage 1:
+        yield Button("Show again later", id="again")
+        yield Button("Got it!", id="got-it")
+
+        #stage 2:
+        yield Input(placeholder="your answer", id="answer-input")
+        yield Button("check", id="check")
+
+        # always (bottom)
+        yield Button("exit", id="exit")
+        yield Static("", id="result")
+
+    def on_mount(self) -> None:
+        # start stage 1, hide stage 2
+        self.query_one("#answer-input", Input).disply = False
+        self.query_one("#check", Button).display = False
+        self.show_browse_item()
+
+    def show_browse_item(self) -> None:
+        word, translation, _ = self.browse_queue[0]
+        self.query_one("#title", Label).update(
+            f"Stage 1: {len(self.browse_queue)} word left to learn")
+        self.query_one("#card", Static).update(
+            f"{word.strip()}  ->  {traslaltion.strip()}")
+        
+    
 
 class SelectLanguagesScreen(ModalScreen):
     def __init__(self, list_lang):
