@@ -177,7 +177,19 @@ class LearningSessionScreen(ModalScreen):
         # reveal stage 2 interface
         self.query_one("#answer-input", Input).display = True
         self.query_one("#check", Button).display = True
-        
+
+        # build 20 questions: each of 10 pairs in both directions
+        for word, translation, vocab_id in self.vocab_pairs:
+            self.quiz_items.append((word, translation, vocab_id, True))
+            self.quiz_items.append((translation, word, vocab_id, False))
+        random.shuffle(self.quiz_items)
+
+        # call test
+        self.show_quiz_items()
+
+    def show_quiz_item(self) -> None:
+        pass
+    
 
 class SelectLanguagesScreen(ModalScreen):
     def __init__(self, list_lang):
