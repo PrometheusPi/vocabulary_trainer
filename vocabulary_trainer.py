@@ -158,13 +158,26 @@ class LearningSessionScreen(ModalScreen):
         self.show_browse_item()
 
     def show_browse_item(self) -> None:
+        """
+        stage 1: learn 10 new vocabulary pairs
+        """
         word, translation, _ = self.browse_queue[0]
         self.query_one("#title", Label).update(
             f"Stage 1: {len(self.browse_queue)} word left to learn")
         self.query_one("#card", Static).update(
             f"{word.strip()}  ->  {traslaltion.strip()}")
+
+    def start_quiz(self) -> None:
+        """
+        stage 2: test what you just learned
+        """
+        # hide stage 1 interface
+        self.query_one("#again", Button).display = False
+        self.query_one("#got-it", Button).display = False
+        # reveal stage 2 interface
+        self.query_one("#answer-input", Input).display = True
+        self.query_one("#check", Button).display = True
         
-    
 
 class SelectLanguagesScreen(ModalScreen):
     def __init__(self, list_lang):
