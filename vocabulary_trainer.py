@@ -188,8 +188,16 @@ class LearningSessionScreen(ModalScreen):
         self.show_quiz_items()
 
     def show_quiz_item(self) -> None:
-        pass
-    
+        question, answer, _, direction = self.quiz_item[0]
+        lang_from = self.languages[0] if direction else self.languages[1]
+        lang_to = self.languages[1] if direction else self.languages[0]
+
+        self.query_one("#title", Label).update(
+            f"Stage 2: {len(self.quiz_items)} of {len(self.vocab_pairs)*2} questions left")
+        self.query_one("#card", Static).update(
+            f"({lang_from} -> {lang_to}) Translate: '{question.strip()}'")
+        self.query_one("#answer-input", Input).value = ""
+        
 
 class SelectLanguagesScreen(ModalScreen):
     def __init__(self, list_lang):
