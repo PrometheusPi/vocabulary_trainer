@@ -188,8 +188,36 @@ class LearningSessionScreen(ModalScreen):
         self.show_quiz_items()
 
     def show_quiz_item(self) -> None:
-        pass
-    
+        question, answer, _, direction = self.quiz_items[0]
+        lang_from = self.languages[0] if direction else self.languages[1]
+        lang_to = self.languages[1] if direction else self.languages[0]
+
+        self.query_one("#title", Label).update(
+            f"Stage 2: {len(self.quiz_items)} of {len(self.vocab_pairs)*2} questions left")
+        self.query_one("#card", Static).update(
+            f"({lang_from} -> {lang_to}) Translate: '{question.strip()}'")
+        self.query_one("#answer-input", Input).value = ""
+
+    def check_answer(self) -> None:
+        question, answer, vocab_id, direction = self.quit_items[0]
+        user_answer = self.query_one("#answer-input", Input).value
+
+        if user_answer.strip() in [a.strip() for a in answer.split("/")]:
+            self.session_result.append((vocab_id, direction, True))
+            self.quiz_items.pop(0)
+            self.query_one("#result", Static).update("")
+            if self.quiz_items:
+                self.show_quiz_item()
+            else:
+                self.finish_session()
+        else:
+            self.session_result.append((vocab_id, direction, False))
+            self.quiz_items.append(self.quiz_items.pop(0)) # put question back into queue
+            self.query_one("#resukt", Static).update(
+                f"Wrong: '{question.strip()}' = '{answer.strip()}'"
+                f"(you wrote: '{user_answer}')")
+            self.show_quiz_item()
+            
 
 class SelectLanguagesScreen(ModalScreen):
     def __init__(self, list_lang):
