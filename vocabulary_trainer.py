@@ -217,6 +217,21 @@ class LearningSessionScreen(ModalScreen):
                 f"Wrong: '{question.strip()}' = '{answer.strip()}'"
                 f"(you wrote: '{user_answer}')")
             self.show_quiz_item()
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        if event.button.id == "again":
+            self.browse_queue.append(self.browse_queue.pop(0))
+            self.show_browse_item()
+        elif event.button.id == "got-it":
+            self.browse_queue.pop(0)
+            if self.browse_queue:
+                self.show_browse_item()
+            else:
+                self.start_quiz()
+        elif event.button.id == "check":
+            self.check_answer()
+        elif event.button.id == "exit":
+            self.dismiss(False)
             
 
 class SelectLanguagesScreen(ModalScreen):
