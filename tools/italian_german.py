@@ -1009,6 +1009,21 @@ party = [
     ("eccezionale", "super")
     ]
 
+religious_and_state_holidays = [
+    ("il Natale", "Weihnachten"),
+    ("la vigilia / la vigilia di Natale", "der Heiligabend"),
+    ("il giorno  di Natale", "der erste Weihnachtstag"),
+    ("Santo Stefano", "der zweite Weihnachtstag"),
+    ("l'ultimo dell'anno", "Silvester"),
+    ("il capodanno", "Neujahr"),
+    ("il primo dell'anno", "der Neujahrstag"),
+    ("il carnevale", "der Karneval / die Fastnacht"),
+    ("il Venerdì Santo", "der Karfreitag"),
+    ("la Pasqua", "Ostern"),
+    ("la Pentecoste", "Pfingsten"),
+    ("il ferragosto", "Mariä Himmelfahrt")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1049,4 +1064,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + art
                              + theater_and_movie
                              + party
+                             + religious_and_state_holidays
                              )
