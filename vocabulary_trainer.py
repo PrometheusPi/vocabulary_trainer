@@ -232,7 +232,15 @@ class LearningSessionScreen(ModalScreen):
             self.check_answer()
         elif event.button.id == "exit":
             self.dismiss(False)
-            
+
+    def finish_session(self) -> None:
+        """
+        write to database after finishing all 20 question
+        """
+        for vocab_id, direction, correct in self.session_results:
+            self.vocab_trainer.update_stats(vocab_id, direction, correct, self.language)
+        self.dismiss(True)
+        
 
 class SelectLanguagesScreen(ModalScreen):
     def __init__(self, list_lang):
