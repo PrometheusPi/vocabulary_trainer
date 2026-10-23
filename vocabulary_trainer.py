@@ -80,41 +80,6 @@ class ListScreen(ModalScreen):
             table.add_row(pair[0], pair[1])
 
 
-class LearnScreen(ModalScreen):
-    def __init__(self, vocab_pairs, lang):
-        super().__init__()
-        self.vocab_pairs = vocab_pairs
-        self.languages = lang.split("_")
-        self.show_index = 0
-        self.show_count = len(vocab_pairs)
-
-    def compose(self) -> ComposeResult:
-        yield Label("learn vocabulary", id="title")
-        yield DataTable()
-        yield Button("Learn Next", id="next")
-        yield Button("Start Testing", id="start_test")
-        yield Button("Exit", id="exit")
-
-    def on_button_pressed(self, event: Button.Pressed) -> None:
-        if event.button.id == "next":
-            table = self.query_one(DataTable)
-            old_pair = self.vocab_pairs[self.show_index]
-            self.show_index = (self.show_index + 1) % self.show_count
-            pair = self.vocab_pairs[self.show_index]
-            table.clear()
-            table.add_row(pair[0], pair[1])
-        else:
-            self.dismiss()
-
-    def on_mount(self) -> None:
-        table = self.query_one(DataTable)
-
-        table.add_column(self.languages[0])
-        table.add_column(self.languages[1])
-
-        pair = self.vocab_pairs[0]
-        table.add_row(pair[0], pair[1])
-
 class LearningSessionScreen(ModalScreen):
     """
     Two-staged learning session for never-before trained words
