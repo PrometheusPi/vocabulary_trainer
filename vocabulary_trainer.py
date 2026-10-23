@@ -165,7 +165,7 @@ class LearningSessionScreen(ModalScreen):
         self.query_one("#title", Label).update(
             f"Stage 1: {len(self.browse_queue)} word left to learn")
         self.query_one("#card", Static).update(
-            f"{word.strip()}  ->  {traslaltion.strip()}")
+            f"{word.strip()}  ->  {translation.strip()}")
 
     def start_quiz(self) -> None:
         """
@@ -185,12 +185,12 @@ class LearningSessionScreen(ModalScreen):
         random.shuffle(self.quiz_items)
 
         # call test
-        self.show_quiz_items()
+        self.show_quiz_item()
 
     def show_quiz_item(self) -> None:
         question, answer, _, direction = self.quiz_items[0]
-        lang_from = self.languages[0] if direction else self.languages[1]
-        lang_to = self.languages[1] if direction else self.languages[0]
+        lang_from = self.languages_pair[0] if direction else self.languages_pair[1]
+        lang_to = self.languages_pair[1] if direction else self.languages_pair[0]
 
         self.query_one("#title", Label).update(
             f"Stage 2: {len(self.quiz_items)} of {len(self.vocab_pairs)*2} questions left")
@@ -199,11 +199,11 @@ class LearningSessionScreen(ModalScreen):
         self.query_one("#answer-input", Input).value = ""
 
     def check_answer(self) -> None:
-        question, answer, vocab_id, direction = self.quit_items[0]
+        question, answer, vocab_id, direction = self.quiz_items[0]
         user_answer = self.query_one("#answer-input", Input).value
 
         if user_answer.strip() in [a.strip() for a in answer.split("/")]:
-            self.session_result.append((vocab_id, direction, True))
+            self.session_results.append((vocab_id, direction, True))
             self.quiz_items.pop(0)
             self.query_one("#result", Static).update("")
             if self.quiz_items:
@@ -211,9 +211,9 @@ class LearningSessionScreen(ModalScreen):
             else:
                 self.finish_session()
         else:
-            self.session_result.append((vocab_id, direction, False))
+            self.session_results.append((vocab_id, direction, False))
             self.quiz_items.append(self.quiz_items.pop(0)) # put question back into queue
-            self.query_one("#resukt", Static).update(
+            self.query_one("#result", Static).update(
                 f"Wrong: '{question.strip()}' = '{answer.strip()}'"
                 f"(you wrote: '{user_answer}')")
             self.show_quiz_item()
