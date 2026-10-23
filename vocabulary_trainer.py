@@ -296,8 +296,17 @@ class VocabularyTrainer(App):
         elif event.button.id == "add_word":
             self.push_screen(AddWordScreen(), self.on_add_word)
         elif event.button.id == "learn":
-            vocab_pairs = self.vocab_trainer.get_all_vocab_pairs(self.selected_language)[:10]
-            self.push_screen(LearnScreen(vocab_pairs, self.selected_language), self.on_learn)
+            vocab_pairs = self.vocab_trainer.get_untrained_vocab_pairs(self.selected_language, 10)
+            if not vocab_pairs:
+                self.query_one("#daily", Static).update(
+                    "No untrained words left - add new words first!")
+            else:
+                self.push_screen(
+                    LearningSessionScreen(
+                        self.vocab_trainer,
+                        vocab_pairs,
+                        self.selected_language),
+                    self.on_learn)
         elif event.button.id == "change_language":
             all_lang = self.vocab_trainer.get_all_languages()
             self.push_screen(SelectLanguagesScreen(all_lang), self.on_change_lang)
@@ -315,7 +324,9 @@ class VocabularyTrainer(App):
         self.vocab_trainer.add_word(word, translation)
 
     def on_learn(self, result):
-        pass
+        if result:
+            self.query_one("#daily", Static).update(
+                "Learn session complete!")
 
     def on_change_lang(self, selected_lang):
         self.selected_language = selected_lang
