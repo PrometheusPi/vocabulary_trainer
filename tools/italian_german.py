@@ -1024,6 +1024,13 @@ religious_and_state_holidays = [
     ("il ferragosto", "Mariä Himmelfahrt")
     ]
 
+going_out = [
+    ("uscire", "ausgehen"),
+    ("andare a bere qc.", "einen trinken gehen"),
+    ("il ballo", "der Tanz / der Ball"),
+    ("ballare", "tanzen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1065,4 +1072,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + theater_and_movie
                              + party
                              + religious_and_state_holidays
+                             + going_out
                              )
