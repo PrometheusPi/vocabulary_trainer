@@ -1028,7 +1028,17 @@ going_out = [
     ("uscire", "ausgehen"),
     ("andare a bere qc.", "einen trinken gehen"),
     ("il ballo", "der Tanz / der Ball"),
-    ("ballare", "tanzen")
+    ("ballare", "tanzen"),
+    ("la discoteca", "die Disko / die Diskothek"),
+    ("la serata", "der Abend"),
+    ("lo show", "die Show"),
+    ("il divertimento", "das Vergnügen"),
+    ("divertente", "amüsant"),
+    ("divertirsi", "Spaß haben / sich amüsieren"),
+    ("Buon divertimento!", "Viel Spaß!"),
+    ("lo scherzo", "der Scherz"),
+    ("fare ridere", "zum Lachen bringen"),
+    ("ridere di", "sich lustig machen über")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
