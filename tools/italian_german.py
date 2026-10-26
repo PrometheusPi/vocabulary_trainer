@@ -1041,6 +1041,21 @@ going_out = [
     ("ridere di", "sich lustig machen über")
     ]
 
+sport = [
+    ("lo sport", "der Sport"),
+    ("sportivo / sportiva", "Sport- / sportlich"),
+    ("l'allenamento", "das Training"),
+    ("allenarsi", "trainieren"),
+    ("la corsa", "das Rennen / der Lauf"),
+    ("correre", "rennen / laufen"),
+    ("fare una corsa", "rennen / schnell fahren"),
+    ("di corsa", "schnell"), # adv - need to solve this
+    ("veloce", "schnell"), # adj
+    ("lento / lenta", "langsam"),
+    ("la palestra", "die Sporthalle / das Fitnessstudio"),
+    ("lo stadio", "das Stadion")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1083,4 +1098,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + party
                              + religious_and_state_holidays
                              + going_out
+                             + sport
                              )
