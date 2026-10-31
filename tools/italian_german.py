@@ -1053,7 +1053,12 @@ sport = [
     ("veloce", "schnell"), # adj
     ("lento / lenta", "langsam"),
     ("la palestra", "die Sporthalle / das Fitnessstudio"),
-    ("lo stadio", "das Stadion")
+    ("lo stadio", "das Stadion"),
+    ("la squadra", "die Mannschaft"),
+    ("il giocatore", "der Spieler"),
+    ("la giocatrice", "die Spielerin"),
+    ("la palla", "der Ball"),
+    ("il pallone", "der Fußball")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
