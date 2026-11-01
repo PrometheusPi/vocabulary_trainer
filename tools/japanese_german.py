@@ -51,6 +51,9 @@ places = [
     ("だいがく", "Universität"),
     ("ここ", "hier"),
     ("どこ", "wo"),
+    ("あそこ", "dort drüben"),
+    ("さかてつ", "U-Bahn"),
+    ("くうこう / 空港", "Flughafen")
     ]
 
 phrases = [
@@ -66,7 +69,7 @@ phrases = [
     ("か", "?"),
     ("と", "und"),
     ("これ", "dies / das hier / jetzt"),
-    
+    ("すみまさに", "Entschuldigung / Pardon")
     ]
 
 adjectives = [
@@ -89,7 +92,13 @@ colors = [
 objects = [
     ("かばん", "Tasche"),
     ("コート", "Mantel / Gericht"),
-    ("てぶくろ / 手袋", "Handschuh")
+    ("てぶくろ / 手袋", "Handschuh"),
+    ("パスポート", "Reisepass"),
+    ("ぼうし", "Hut"),
+    ("スマホ", "Smartphone"),
+    ("ちず", "Karte"),
+    ("きっぷ", "Ticket"),
+    ("かさ", "Regenschirm"),
     ]
 
 possessive_pronouns = [
@@ -100,12 +109,19 @@ numbers = [
     ("一 / いち", "eins"),
     ("二 / に", "zwei"),
     ("三 / さん", "drei"),
-    ("時 / じ", "Uhr")
+    ("時 / じ", "Uhr"),
+    ("はん", "dreißig / 30")
     ]
 
 asmr = [
     ("ひざまくら", "Kniekopfkissen / knee pillow"),
     ("みみかき", "Ohrreinigung / Ohrreinigungslöffel")
+    ]
+
+time = [
+    ("なんじ / 何時", "wann / wie spät"),
+    ("いま / 今", "jetzt"),
+    ("じ", "Uhr")
     ]
 
 
@@ -122,4 +138,5 @@ list_vocab_pairs_jap_deu =(
     + possessive_pronouns
     + numbers
     + asmr
+    + time
     )
