@@ -1058,7 +1058,19 @@ sport = [
     ("il giocatore", "der Spieler"),
     ("la giocatrice", "die Spielerin"),
     ("la palla", "der Ball"),
-    ("il pallone", "der Fußball")
+    ("il pallone", "der Fußball"),
+    ("tirare", "werfen / schießen"),
+    ("prendere", "fangen"), # double meaning
+    ("il calcio", "Fußball"),
+    ("il calciatore", "der Fußballspieler / der Fubballer"),
+    ("la calciatrice", "die Fußballspielerin / die Fußballerin"),
+    ("la porta / il gol", "das Tor"), # different meaning
+    ("lo snowboard", "das Snowboard"),
+    ("la slitta", "der Schlitten"),
+    ("lo sci", "der Ski"),
+    ("lo sci di fondo", "Langlauf"),
+    ("sciare", "Ski laufen / Ski fahren"),
+    ("nuotare", "schwimmen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
