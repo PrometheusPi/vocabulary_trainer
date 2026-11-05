@@ -1070,7 +1070,14 @@ sport = [
     ("lo sci", "der Ski"),
     ("lo sci di fondo", "Langlauf"),
     ("sciare", "Ski laufen / Ski fahren"),
-    ("nuotare", "schwimmen")
+    ("nuotare", "schwimmen"),
+    ("la piscina", "das Schwimmbad / der Swimmingpool"),
+    ("andare a cavallo", "reiten"),
+    ("fare jogging", "joggen"),
+    ("l'alpinismo", "das Bergsteigen"),
+    ("la camminata", "die Wanderung"),
+    ("la partita", "das Spiel"),
+    ("la gara", "der Wettkampf"),
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
