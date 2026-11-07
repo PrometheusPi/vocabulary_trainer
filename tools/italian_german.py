@@ -1078,6 +1078,17 @@ sport = [
     ("la camminata", "die Wanderung"),
     ("la partita", "das Spiel"),
     ("la gara", "der Wettkampf"),
+    ("il concorrente / la concorrente", "der Teilnehmer / die Teilnehmerin"),
+    ("l'avversario", "der Gegner"),
+    ("l'avversaria", "die Gegnerin"),
+    ("il vincitore", "der Sieger"),
+    ("la vincitrice", "die Siegerin"),
+    ("il perdente / la perdente", "der Verlierer / die Verliererin"),
+    ("il campo", "das Feld / der Platz"),
+    ("la partenza", "der Start"),
+    ("il traguardo", "das Ziel"),
+    ("la vittoria", "der Sieg"),
+    ("vincere", "gewinnen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
