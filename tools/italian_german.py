@@ -1088,7 +1088,11 @@ sport = [
     ("la partenza", "der Start"),
     ("il traguardo", "das Ziel"),
     ("la vittoria", "der Sieg"),
-    ("vincere", "gewinnen")
+    ("vincere", "gewinnen"),
+    ("battere", "besiegen"),
+    ("la sconfitta", "die Niederlage"),
+    ("perdere", "verlieren"),
+    ("famoso / famosa", "berühmt")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
