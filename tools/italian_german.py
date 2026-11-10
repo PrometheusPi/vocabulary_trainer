@@ -1095,6 +1095,19 @@ sport = [
     ("famoso / famosa", "berühmt")
     ]
 
+hobby = [
+    ("il passatempo", "der Zeitvertreib / die Freizeitbeschäftigung"),
+    ("il tempo libero", "die Freizeit"),
+    ("la fotografia", "die Fotograpfie"),
+    ("fotografare", "fotografieren"),
+    ("la foto", "das Foto / die Aufnahme"),
+    ("la macchina fotografica", "der Fotoapparat"),
+    ("la macchina digitale", "die Digitalkamera"),
+    ("il flash", "der Blitz"),
+    ("il soggetto", "das Motiv"),
+    ("il rullino", "der Film / die Filmrolle")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1138,4 +1151,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + religious_and_state_holidays
                              + going_out
                              + sport
+                             + hobby
                              )
