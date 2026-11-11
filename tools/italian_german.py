@@ -1105,7 +1105,22 @@ hobby = [
     ("la macchina digitale", "die Digitalkamera"),
     ("il flash", "der Blitz"),
     ("il soggetto", "das Motiv"),
-    ("il rullino", "der Film / die Filmrolle")
+    ("il rullino", "der Film / die Filmrolle"),
+    ("il gioco", "das Spiel"),
+    ("giochi","Spiele"),
+    ("giocare", "spielen"),
+    ("la fortuna", "das Glück"),
+    ("la sfortuna", "das Pech"),
+    ("il dado", "der Würfel"),
+    ("le carte", "die Karten"),
+    ("la passeggiata", "der Spaziergang"),
+    ("l'ombrellone", "der Sonnenschirm"),
+    ("prendere il sole", "sich sonnen"),
+    ("la pesca", "das Angeln"),
+    ("pescare", "angeln"),
+    ("fare il bricolage", "basteln / werkeln"),
+    ("l'attrezzo", "das Werkzeug"),
+    ("il coltellino", "das Taschenmesser")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
