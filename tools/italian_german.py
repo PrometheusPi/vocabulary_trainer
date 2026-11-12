@@ -1123,6 +1123,15 @@ hobby = [
     ("il coltellino", "das Taschenmesser")
     ]
 
+shopping = [
+    ("aperto / aperta", "geöffnet / offen"),
+    ("chiuso / chiusa", "geschlossen / zu"),
+    ("l'offerta", "das Angebot"),
+    ("l'offerta speciale", "das Sonderangebot"),
+    ("offrire", "anbieten"),
+    ("comprare", "kaufen")
+    ]
+
 list_vocab_pairs_ital_deu = (personal_information
                              + character_traits
                              + appearance
@@ -1167,4 +1176,5 @@ list_vocab_pairs_ital_deu = (personal_information
                              + going_out
                              + sport
                              + hobby
+                             + shopping
                              )
