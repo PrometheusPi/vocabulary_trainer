@@ -1129,7 +1129,13 @@ shopping = [
     ("l'offerta", "das Angebot"),
     ("l'offerta speciale", "das Sonderangebot"),
     ("offrire", "anbieten"),
-    ("comprare", "kaufen")
+    ("comprare", "kaufen"),
+    ("l'acquisto", "der Einkauf / der Kauf"),
+    ("acquistare", "erwerben / einkaufen"),
+    ("la vendita", "der Verkauf"),
+    ("vendere", "verkaufen"),
+    ("la spesa", "die Einkäufe"),
+    ("fare la spesa", "einkaufen / Einkäufe erledigen")
     ]
 
 list_vocab_pairs_ital_deu = (personal_information
